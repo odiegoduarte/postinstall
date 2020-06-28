@@ -1,13 +1,11 @@
 #!/bin/bash
 
 #Criado por Diego Duarte 2020
-#
-# Informações
-#
+
 
 #------------------------------------Variáveis PPA---------------------------------------#
 
-PPA_PULSE_EFFECTS"ppa:mikhailnov/pulseeffects"
+PPA_QBITORRENT="ppa:qbittorrent-team/qbittorrent-stable"
 
 #------------------------------------Variáveis.deb---------------------------------------#
 
@@ -19,7 +17,7 @@ URL_EMAGE"https://github.com/douglasjunior/emage/releases/download/1.1.0/emage-1
 
 #-----------------------------------Variáveis de pasta------------------------------------#
 
-DEB_DOWNLOADS="$HOME/Downloads/DEB"
+DEB="$HOME/Downloads/DEB"
 APPIMAGE="$HOME/Apps"
 
 #-------------------------------------Adicionando PPA------------------------------------ #
@@ -42,8 +40,9 @@ mkdir "$APPIMAGE"
 wget -c "$URL_EMAGE" -P "$Apps"
 
 #-----------------------------------------DEB-------------------------------------------- #
-apt-get install qbittorrent -y
+
+#apt-get install qbittorrent -y
 
 #---------------------------------------Flatpak------------------------------------------ #
 
-flatpak install flathub org.gimp.GIMP
+#flatpak install flathub org.gimp.GIMP
