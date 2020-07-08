@@ -13,8 +13,8 @@ Esse shellscript foi criado para automatizar a instalação de programas na minh
 postinstall_ | sobre
 :------ | :------ 
 postintall_template.sh | Template base para você criar seu próprio shellscript automatizado.
-postintall_notebook.sh | Shellscript criado para usso pessoal
-postintall_desktop.sh | Shellscript criado para usso pessoal 
+postintall_notebook.sh | Shellscript criado para usso pessoal 20.04 LTS
+postintall_desktop.sh | Shellscript criado para usso pessoal  20.04 LTS
 
 <br>
 <br>

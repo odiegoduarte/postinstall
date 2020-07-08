@@ -1,15 +1,16 @@
 #!/bin/bash
 
 #Criado por Diego Duarte 2020
+#Esse shellscript criado com base no Linux Mint 20.04 LTS.
 
 {
     for ((i = 0 ; i <= 100 ; i+=7)); do
         sleep 0.1
         echo $i
     done
-} | whiptail --gauge "Iniciando o postinstall" 6 50 0
+} | whiptail --gauge "Iniciando o postinstall.sh" 6 50 0
 
-if (whiptail --title " Seja bem-vindo(a)$(whoami) " --yesno "PostInstall é um simples shell script que foi criado para fazer instalação automatizada de programas no sistema.
+if (whiptail --title " Seja bem-vindo(a)$(whoami) " --yesno "PostInstall é um simples shell script que foi criado para fazer instalação automatizada de programas no Linux Mint 20.04.
 No próximo passo irá te pedir a senha de usuário.
 Deseja continuar ?" 10 60) then
     echo "Iniciando postinstall . . . "
@@ -19,17 +20,16 @@ fi
 
 #Variáveis PPA --------------------------------------------------------------------------------------------#
 
-PPA_QBITORRENT="ppa:qbittorrent-team/qbittorrent-stable"
-PPA_PEEK="ppa:peek-developers/stable"
+#PPA_QBITORRENT="ppa:qbittorrent-team/qbittorrent-stable"
+#PPA_PEEK="ppa:peek-developers/stable"
 
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
-URL_DISCORD="https://discord.com/api/download?platform=linux&format=deb"
+URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb"
 URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.12.5-1_amd64.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.2/ipscan_3.7.2_amd64.deb"
-URL_LINSSID="https://ufpr.dl.sourceforge.net/project/linssid/LinSSID_3.6/linssid_3.6-1_amd64.deb"
 URL_WOEUSB="http://ppa.launchpad.net/nilarimogard/webupd8/ubuntu/pool/main/w/woeusb/woeusb_3.3.1-1~webupd8~focal0_amd64.deb"
 URL_PEAZIP="https://sourceforge.net/projects/peazip/files/7.3.2/peazip_7.3.2.LINUX.x86_64.GTK2.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
@@ -48,10 +48,15 @@ APPIMAGE="$HOME/Apps"
 
 echo "Adicionando PPA ao Sistema"
 
+#Removendo travas do APT -----------------------------------------------------------------------------------#
+
+sudo rm /var/lib/dpkg/lock-frontend
+sudo rm /var/cache/apt/archives/lock
+
 #Adicionando PPA ------------------------------------------------------------------------------------------#
 
-sudo apt-add-repository "$PPA_QBITORRENT"
-sudo apt-add-repository "$PPA_PEEK" --sk
+#sudo apt-add-repository "$PPA_QBITORRENT" -y
+#sudo apt-add-repository "$PPA_PEEK" -y
 
 #Atualizando o repositório --------------------------------------------------------------------------------#
 
@@ -68,7 +73,6 @@ wget -c "$URL_TEAMVIEWER" -P "$DEB"
 wget -c "$URL_DISCORD"    -P "$DEB"
 wget -c "$URL_4K"         -P "$DEB"
 wget -c "$URL_ANGRYIP"    -P "$DEB"
-wget -c "$URL_LINSSID"    -P "$DEB"
 wget -c "$URL_WOEUSB"     -P "$DEB"
 wget -c "$URL_PEAZIP"     -P "$DEB"
 wget -c "$URL_STACER"     -P "$DEB"
@@ -88,17 +92,20 @@ wget -c "$URL_VSXU"        -P "$APPIMAGE"
 
 echo "Instalando programas dos PPA's"
 
+
+
 #Instala os apps via repositório --------------------------------------------------------------------------#
 
 #PPA de terceiros
-apt-get install qbittorrent -y
-apt-get install peek -y
-
+#sudo apt-get install qbittorrent -y
+#sudo apt-get install peek -y
+ 
 #PPA
-apt-get install SimpleScreenRecorder -y
-apt-get install audacity -y
-apt-get install spotify -y
-apt-get install steam -y
+sudo apt install linssid -y
+sudo apt install SimpleScreenRecorder -y
+sudo apt install audacity -y
+sudo apt install spotify-client -y
+sudo apt install steam -y
 
 echo "Instalando programas em Flatpak"
 
