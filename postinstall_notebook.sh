@@ -20,6 +20,7 @@ fi
 
 #Variáveis PPA --------------------------------------------------------------------------------------------#
 
+PPA_WOEUSB="ppa:nilarimogard/webupd8"
 #PPA_QBITORRENT="ppa:qbittorrent-team/qbittorrent-stable"
 #PPA_PEEK="ppa:peek-developers/stable"
 
@@ -29,7 +30,7 @@ URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd6
 URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb"
 URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.12.5-1_amd64.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.2/ipscan_3.7.2_amd64.deb"
-URL_WOEUSB="http://ppa.launchpad.net/nilarimogard/webupd8/ubuntu/pool/main/w/woeusb/woeusb_3.3.1-1~webupd8~focal0_amd64.deb"
+
 URL_PEAZIP="https://sourceforge.net/projects/peazip/files/7.3.2/peazip_7.3.2.LINUX.x86_64.GTK2.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
 
@@ -61,6 +62,7 @@ sudo rm /var/cache/apt/archives/lock
 
 #Adicionando PPA ------------------------------------------------------------------------------------------#
 
+sudo apt-add-repository "$PPA_WOEUSB" -y
 #sudo apt-add-repository "$PPA_QBITORRENT" -y
 #sudo apt-add-repository "$PPA_PEEK" -y
 
@@ -108,10 +110,13 @@ echo "Instalando programas dos PPA's"
 #Instala os apps via repositório --------------------------------------------------------------------------#
 
 #PPA de terceiros
+
+sudo apt install woeusb -y
 #sudo apt-get install qbittorrent -y
 #sudo apt-get install peek -y
  
 #PPA
+
 sudo apt install linssid -y
 sudo apt install SimpleScreenRecorder -y
 sudo apt install audacity -y
