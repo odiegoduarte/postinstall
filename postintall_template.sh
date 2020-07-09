@@ -17,20 +17,24 @@ PPA_QBITORRENT="ppa:qbittorrent-team/qbittorrent-stable"
 #
 
 #Variáveis.deb --------------------------------------------------------------------------------------------#
+
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
+
 URL_EMAGE"https://github.com/douglasjunior/emage/releases/download/1.1.0/emage-1.1.0-x86_64.AppImage"
 
 
 #Variáveis de pasta ---------------------------------------------------------------------------------------#
+
 DEB="$HOME/Downloads/DEB"
 APPIMAGE="$HOME/Apps"
 
 
 #Adicionando PPA ------------------------------------------------------------------------------------------#
-sudo apt-add-repository "$PPA_QBITORRENT" --sk
+
+sudo apt-add-repository "$PPA_QBITORRENT" -y
 
 #Atualizando o repositório --------------------------------------------------------------------------------#
 
@@ -43,6 +47,7 @@ wget -c "$URL_CHROME"     -P "$DEB"
 
 
 sudo dpkg -i $DEB/*.deb
+sudo apt-get install -f -y
 
 #Download App Image ---------------------------------------------------------------------------------------#
 
@@ -62,5 +67,13 @@ apt-get install SimpleScreenRecorder -y
 #Flatpak --------------------------------------------------------------------------------------------------#
 
 flatpak install flathub org.gimp.GIMP -y
+
+#Atualização e limpeza do sistema -------------------------------------------------------------------------#
+
+flatpak update
+
+sudo apt update -y
+sudo apt autoclean -y
+sudo apt autoremove -y
 
 echo "Instalação finalizada !"
