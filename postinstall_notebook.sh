@@ -20,14 +20,11 @@ fi
 
 #Variáveis PPA --------------------------------------------------------------------------------------------#
 
-PPA_WOEUSB="ppa:nilarimogard/webupd8"
-#PPA_QBITORRENT="ppa:qbittorrent-team/qbittorrent-stable"
-#PPA_PEEK="ppa:peek-developers/stable"
+#
 
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb"
 URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.12.5-1_amd64.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.2/ipscan_3.7.2_amd64.deb"
 
@@ -62,9 +59,7 @@ sudo rm /var/cache/apt/archives/lock
 
 #Adicionando PPA ------------------------------------------------------------------------------------------#
 
-sudo apt-add-repository "$PPA_WOEUSB" -y
-#sudo apt-add-repository "$PPA_QBITORRENT" -y
-#sudo apt-add-repository "$PPA_PEEK" -y
+#
 
 #Atualizando o repositório --------------------------------------------------------------------------------#
 
@@ -84,10 +79,8 @@ echo "Baixando e instalando programas .DEB"
 mkdir "$DEB"
 
 wget -c "$URL_CHROME"     -P "$DEB"
-wget -c "$URL_DISCORD"    -P "$DEB"
 wget -c "$URL_4K"         -P "$DEB"
 wget -c "$URL_ANGRYIP"    -P "$DEB"
-wget -c "$URL_WOEUSB"     -P "$DEB"
 wget -c "$URL_PEAZIP"     -P "$DEB"
 wget -c "$URL_STACER"     -P "$DEB"
 
@@ -109,14 +102,6 @@ echo "Instalando programas dos PPA's"
 
 #Instala os apps via repositório --------------------------------------------------------------------------#
 
-#PPA de terceiros
-
-sudo apt install woeusb -y
-#sudo apt-get install qbittorrent -y
-#sudo apt-get install peek -y
- 
-#PPA
-
 sudo apt install linssid -y
 sudo apt install SimpleScreenRecorder -y
 sudo apt install audacity -y
@@ -128,27 +113,24 @@ echo "Instalando programas em Flatpak"
 
 #Flatpak --------------------------------------------------------------------------------------------------#
 
+flatpak install flathub com.discordapp.Discord
 flatpak install flathub org.gimp.GIMP -y
 flatpak install flathub org.gimp.GIMP.Plugin.GMic -y
 flatpak install flathub org.inkscape.Inkscape -y
 flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub net.sourceforge.projectM -y
 
-#Removendo programas --------------------------------------------------------------------------------------#
+#Atualização e limpeza do sistema -------------------------------------------------------------------------#
 
-sudo apt remove transmission -y
 sudo apt remove hexchat -y
 sudo apt remove thunderbird -y
 sudo apt remove drawing -y
 sudo apt remove pix -y
 
-#Atualização e limpeza do sistema -------------------------------------------------------------------------#
-
 flatpak update
-flatpak uninstall --unused -y
 
 sudo apt update -y
-sudo apt autoremove -y
 sudo apt autoclean -y
+sudo apt autoremove -y
 
 echo "Instalação finalizada !"
