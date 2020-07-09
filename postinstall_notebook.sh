@@ -43,8 +43,8 @@ URL_VSXU="https://github.com/vovoid/vsxu/releases/download/v0.6.3/VSXu-0.6.3.gli
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
 
-URL_QOGIR="https://uc9f2e379115af6bb0b2efb0d830.dl.dropboxusercontent.com/cd/0/get/A7KJBBJWO5-tmKSStTdfM1a4FW7tqqGjCNASG-RpQETqTZQrLKkTjJDPsJSsTTuMzsMUFRPV_AR9_umoZDgM4JCCCd-SzBRDWd8mxL6aZtZOzB_t6o95hcZJkavte1SPsZ8/file?dl=1#"
-URL_PAPIRUS="https://uc192c634ebf7991f214775fcbac.dl.dropboxusercontent.com/cd/0/get/A7IDDHnXq9vsibG9vKpW3qowfu6NHHC3YAQsMhAzXZ5pw9rkFLlM9Cyx5flcfgpDD_Mbs-PqovnAutES2x5-lSbtOeVT0xdowMP2qnXO77K78oTJ0-AJI7d8Ms0zrKH1Ry4/file?dl=1#"
+URL_QOGIR="http://download1479.mediafire.com/f67sormryqrg/vfpoeqai99z6qzb/Qogir-dark.tar.xz"
+URL_PAPIRUS="http://download946.mediafire.com/ugdwtkm73ttg/eqlshp79vognc3d/papirus-icon-theme.tar.xz"
 
 #Variáveis de pasta ---------------------------------------------------------------------------------------#
 
