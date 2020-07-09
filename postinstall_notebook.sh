@@ -42,8 +42,8 @@ URL_VSXU="https://github.com/vovoid/vsxu/releases/download/v0.6.3/VSXu-0.6.3.gli
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
 
-URL_QOGIR="https://dllb2.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1OTIzMDkxNzkiLCJ1IjpudWxsLCJsdCI6ImRvd25sb2FkIiwicyI6Ijg3OWJiOWViYTY4ZWM5ZjlhMTY3ZWY5ZjMzMjAxNGRhYWE4MGFmZDJhNWVhMzYyMzE4ODZiZjYwOTRkYWM4ZWI5ZDBjMTI3MTkzMzk4ZmNiODhjMTRjZGEyOTcwMDJlOWE2YzI4NmEwNjc3MmVlYzk5ZjFhNjMyMzM5OTY5YzZkIiwidCI6MTU5NDI2MjIxMiwic3RmcCI6IjRmOWEyMWE3ZjQ2YmRiZGQ1NWI1NGRjY2Q2ZDQ1MmU1Iiwic3RpcCI6IjE4Ni4yMjUuMTg2LjcyIn0.gD0YIYkIEUOOpWog1jJZQ_uBNG8ubSROfPVyEdOMkxA/Qogir-dark.tar.xz"
-URL_PAPIRUS="https://dllb2.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1OTM3NDczOTEiLCJ1IjpudWxsLCJsdCI6ImRvd25sb2FkIiwicyI6IjJhNzlkNjBkZTQ1ZTk1M2UyMTM2MGUxZWFmNjA2N2ZiNTdmMjdjMjVlM2EwYjE0NjU2ZWNmYjBjOGFmYjQ0ZTMyZWNiZjJkZmExNzJjMzBlNDRjNDQ0MDU5YTk2NjhiMTY5ZjU1Mjk2MjUyNDFjZjIxZGM2OGNkNzE1ZGU3YjEzIiwidCI6MTU5NDI2MjM2OCwic3RmcCI6IjRmOWEyMWE3ZjQ2YmRiZGQ1NWI1NGRjY2Q2ZDQ1MmU1Iiwic3RpcCI6IjE4Ni4yMjUuMTg2LjcyIn0.Q45qkfEfGS_BoB3b-ZlOJpQRKJEF1bEhPS_L_eibuyQ/papirus-icon-theme.tar.xz"
+URL_QOGIR="https://uc9f2e379115af6bb0b2efb0d830.dl.dropboxusercontent.com/cd/0/get/A7KJBBJWO5-tmKSStTdfM1a4FW7tqqGjCNASG-RpQETqTZQrLKkTjJDPsJSsTTuMzsMUFRPV_AR9_umoZDgM4JCCCd-SzBRDWd8mxL6aZtZOzB_t6o95hcZJkavte1SPsZ8/file?dl=1#"
+URL_PAPIRUS="https://uc192c634ebf7991f214775fcbac.dl.dropboxusercontent.com/cd/0/get/A7IDDHnXq9vsibG9vKpW3qowfu6NHHC3YAQsMhAzXZ5pw9rkFLlM9Cyx5flcfgpDD_Mbs-PqovnAutES2x5-lSbtOeVT0xdowMP2qnXO77K78oTJ0-AJI7d8Ms0zrKH1Ry4/file?dl=1#"
 
 #Variáveis de pasta ---------------------------------------------------------------------------------------#
 
@@ -90,6 +90,7 @@ wget -c "$URL_PEAZIP"     -P "$DEB"
 wget -c "$URL_STACER"     -P "$DEB"
 
 sudo dpkg -i $DEB/*.deb
+sudo apt-get install -f -y
 
 echo "Baixando e instalando programas APPIMAGE"
 
