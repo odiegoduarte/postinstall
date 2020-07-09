@@ -26,7 +26,6 @@ fi
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
 URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb"
 URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.12.5-1_amd64.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.2/ipscan_3.7.2_amd64.deb"
@@ -83,7 +82,6 @@ echo "Baixando e instalando programas .DEB"
 mkdir "$DEB"
 
 wget -c "$URL_CHROME"     -P "$DEB"
-wget -c "$URL_TEAMVIEWER" -P "$DEB"
 wget -c "$URL_DISCORD"    -P "$DEB"
 wget -c "$URL_4K"         -P "$DEB"
 wget -c "$URL_ANGRYIP"    -P "$DEB"
@@ -139,8 +137,6 @@ sudo apt remove drawing -y
 sudo apt remove pix -y
 
 #Atualização e limpeza do sistema -------------------------------------------------------------------------#
-
-sudo snap set system refresh.retain=2
 
 flatpak update
 flatpak uninstall --unused -y
