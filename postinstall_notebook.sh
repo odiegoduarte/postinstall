@@ -37,7 +37,7 @@ URL_REAPER="https://dlcf.reaper.fm/6.x/reaper612c_linux_x86_64.tar.xz"
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
 
-URL_QOGIR="https://github.com/vinceliuice/Qogir-theme/archive/releases.zip"
+URL_QOGIR="https://raw.githubusercontent.com/vinceliuice/Qogir-theme/releases/Qogir-dark.tar.xz"
 URL_PAPIRUS="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/master.zip"
 
 #Variáveis de pasta ---------------------------------------------------------------------------------------#
@@ -49,7 +49,7 @@ THEMES="$HOME/.themes"
 
 echo "Adicionando PPA ao Sistema"
 
-#Removendo travas do APT -----------------------------------------------------------------------------------#
+#Removendo travas do APT ----------------------------------------------------------------------------------#
 
 sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/cache/apt/archives/lock
@@ -64,10 +64,18 @@ sudo apt update -y
 
 echo "Baixando temas e icones"
 
-#Personalização --------------------------------------------------------------------------------------------#
+#Personalização -------------------------------------------------------------------------------------------#
 
 wget -c "$URL_QOGIR"     -P "$THEMES"
 wget -c "$URL_PAPIRUS"   -P "$ICONS"
+
+cd "$THEMES"
+tar -xvf *.tar.xz
+#sudo rm "$THEMES" *.tar.xz
+
+cd "$ICONS"
+unzip *.zip
+#sudo rm "$THEMES" *.zip
 
 echo "Baixando e instalando programas .DEB"
 
@@ -105,6 +113,7 @@ sudo apt install spotify-client -y
 sudo apt install steam -y
 sudo apt install mint-meta-codecs -y
 sudo apt install p7zip-full -y
+sudo apt install pavucontrol -y
 
 echo "Instalando programas em Flatpak"
 

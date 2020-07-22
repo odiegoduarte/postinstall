@@ -8,17 +8,22 @@
 
 #Variáveis PPA --------------------------------------------------------------------------------------------#
 
-PPA_QBITORRENT="ppa:qbittorrent-team/qbittorrent-stable"
-#|-----------|  |--------------------------------------| 
-#      |                         |
-#      |                         |------ URL do seu PPA
-#      | 
-#      |------ Nome da váriavel que você vai usar no passo Adicionando ppa
-#
+ PPA_OBS="ppa:obsproject/obs-studio"
+#|-----|  |-----------------------| 
+#   |                 |
+#   |                 |------ URL do seu PPA
+#   | 
+#   |------ Nome da váriavel que você vai usar no passo "#Adicionando PPA"
+
 
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+#|-------|  |------------------------------------------------------------------------| 
+#    |                                          |
+#    |                                          |------ URL do seu .deb
+#    | 
+#    |------ Nome da váriavel que você vai usar no passo "#Download DEB"
 
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
@@ -26,19 +31,45 @@ URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd6
 URL_EMAGE"https://github.com/douglasjunior/emage/releases/download/1.1.0/emage-1.1.0-x86_64.AppImage"
 
 
+#Variáveis Personalização ---------------------------------------------------------------------------------#
+
+URL_QOGIR="https://raw.githubusercontent.com/vinceliuice/Qogir-theme/releases/Qogir-dark.tar.xz"
+URL_PAPIRUS="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/master.zip"
+
+
 #Variáveis de pasta ---------------------------------------------------------------------------------------#
 
 DEB="$HOME/Downloads/DEB"
 APPIMAGE="$HOME/Apps"
+ICONS="$HOME/.icons"
+THEMES="$HOME/.themes"
 
+#Removendo travas do APT -----------------------------------------------------------------------------------#
+
+sudo rm /var/lib/dpkg/lock-frontend
+sudo rm /var/cache/apt/archives/lock
 
 #Adicionando PPA ------------------------------------------------------------------------------------------#
 
-sudo apt-add-repository "$PPA_QBITORRENT" -y
+sudo apt-add-repository "$PPA_OBS" -y
 
 #Atualizando o repositório --------------------------------------------------------------------------------#
 
 sudo apt update -y
+
+#Personalização -------------------------------------------------------------------------------------------#
+
+wget -c "$URL_QOGIR"     -P "$THEMES"
+wget -c "$URL_PAPIRUS"   -P "$ICONS"
+
+cd "$THEMES"
+tar -xvf *.tar.xz
+
+cd "$ICONS"
+unzip *.zip
+
+#O comando cd é para acessar a pasta e os comandos "tar" e "unzip" são para extrair os arquivos compactados.
+
 
 #Download DEB ---------------------------------------------------------------------------------------------#
 
