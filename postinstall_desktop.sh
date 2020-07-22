@@ -1,53 +1,191 @@
 #!/bin/bash
 
 #Criado por Diego Duarte 2020
+#Esse shellscript criado com base no Linux Mint 20 LTS.
 
-#Variáveis PPA
+{
+    for ((i = 0 ; i <= 100 ; i+=7)); do
+        sleep 0.1
+        echo $i
+    done
+} | whiptail --gauge "Iniciando o postinstall.sh" 6 50 0
+
+if (whiptail --title " Seja bem-vindo(a)$(whoami) " --yesno "PostInstall é um simples shell script que foi criado para fazer instalação automatizada de programas no Linux Mint 20.04.
+No próximo passo irá te pedir a senha de usuário.
+Deseja continuar ?" 10 60) then
+    echo "Iniciando postinstall . . . "
+else
+    echo "Postinstall cancelado.$6 "
+fi
+
+#Variáveis PPA --------------------------------------------------------------------------------------------#
 
 PPA_PULSE_EFFECTS="ppa:mikhailnov/pulseeffects"
-PPA_QBITORRENT="ppa:qbittorrent-team/qbittorrent-stable"
+PPA_OBS="ppa:obsproject/obs-studio"
 
-#Variáveis.deb
+#Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
-URL_DISCORD="https://discord.com/api/download?platform=linux&format=deb"
+URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/69.0.3686.36/linux/opera-stable_69.0.3686.36_amd64.deb"
+#URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
+#URL_ANYDESK="https://download.anydesk.com/linux/anydesk_5.5.6-1_amd64.deb?_ga=2.34949865.93870553.1593317662-658123471.1593317662"
+URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb"
+URL_RAMME="https://github.com/terkelg/ramme/releases/download/v3.2.5/Ramme_3.2.5_amd64.deb"
+URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.12.5-1_amd64.deb"
+URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.2/ipscan_3.7.2_amd64.deb"
+URL_SKYPE="https://repo.skype.com/latest/skypeforlinux-64.deb"
+URL_PEAZIP="https://sourceforge.net/projects/peazip/files/7.3.2/peazip_7.3.2.LINUX.x86_64.GTK2.deb"
+URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
+URL_VSCODE="https://az764295.vo.msecnd.net/stable/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/code_1.46.1-1592428892_amd64.deb"
+URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 
-#Variáveis AppImage
+#Variáveis AppImage ---------------------------------------------------------------------------------------#
 
-URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage-1.1.0-x86_64.AppImage"
 URL_SCREENCLOUD="https://github.com/olav-st/screencloud/releases/download/v1.5.1/ScreenCloud-v1.5.1-x86_64.AppImage"
+URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.11.3.AppImage"
+URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
+URL_REAPER="https://dlcf.reaper.fm/6.x/reaper612c_linux_x86_64.tar.xz"
+URL_SWEETHOME3d="https://ufpr.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.3/SweetHome3D-6.3-linux-x64.tgz"
+URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_10.25_Linux.tar.gz"
 
-#Variáveis de pasta
+#Variáveis Personalização ---------------------------------------------------------------------------------#
+
+URL_QOGIR="https://raw.githubusercontent.com/vinceliuice/Qogir-theme/releases/Qogir-dark.tar.xz"
+URL_PAPIRUS="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/master.zip"
+#URL_ICONSEX=""
+
+#Variáveis de pasta ---------------------------------------------------------------------------------------#
 
 DEB="$HOME/Downloads/DEB"
 APPIMAGE="$HOME/Apps"
+ICONS="$HOME/.icons"
+ICONSEX="$HOME/.icons/Extras"
+THEMES="$HOME/.themes"
 
-#Adicionando PPA
+echo "Adicionando PPA ao Sistema"
 
-sudo apt-add-repository "$PULSE_EFFECTS"
-sudo apt-add-repository "$PPA_QBITORRENT"
+#Removendo travas do APT -----------------------------------------------------------------------------------#
+
+sudo rm /var/lib/dpkg/lock-frontend
+sudo rm /var/cache/apt/archives/lock
+
+#Adicionando PPA ------------------------------------------------------------------------------------------#
+
+sudo apt-add-repository "$PULSE_EFFECTS" -y
+sudo apt-add-repository "$PPA_OBS" -y
+
+#Atualizando o repositório --------------------------------------------------------------------------------#
 
 sudo apt update -y
 
-#Download DEB
-mkdir "$DEB"
-wget -c "$URL_CHROME"     -P "$DEB"
-wget -c "$URL_TEAMVIEWER" -P "$DEB"
-wget -c "$URL_DISCORD"    -P "$DEB"
+echo "Baixando temas e icones"
 
-#Download App Image
+#Personalização --------------------------------------------------------------------------------------------#
+
+wget -c "$URL_QOGIR"     -P "$THEMES"
+wget -c "$URL_PAPIRUS"   -P "$ICONS"
+#wget -c "$URL_ICONSEX"   -P "$ICONSEX"
+
+cd "$THEMES"
+tar -xvf *.tar.xz
+#sudo rm "$THEMES" *.tar.xz
+
+cd "$ICONS"
+unzip *.zip
+#sudo rm "$THEMES" *.zip
+
+echo "Baixando e instalando programas .DEB"
+
+#Download DEB ---------------------------------------------------------------------------------------------#
+
+mkdir "$DEB"
+
+wget -c "$URL_CHROME"     -P "$DEB"
+wget -c "$URL_OPERA"      -P "$DEB"
+#wget -c "$URL_TEAMVIEWER" -P "$DEB"
+#wget -c "$URL_ANYDESK"    -P "$DEB"
+wget -c "$URL_DISCORD"    -P "$DEB"
+wget -c "$URL_RAMME"      -P "$DEB"
+wget -c "$URL_4K"         -P "$DEB"
+wget -c "$URL_ANGRYIP"    -P "$DEB"
+wget -c "$URL_SKYPE"      -P "$DEB"
+wget -c "$URL_PEAZIP"     -P "$DEB"
+wget -c "$URL_STACER"     -P "$DEB"
+wget -c "$URL_VSCODE"     -P "$DEB"
+wget -c "$URL_EMAGE"      -P "$DEB"
+
+sudo dpkg -i $DEB/*.deb
+sudo apt-get install -f -y
+
+echo "Baixando e instalando programas APPIMAGE"
+
+#Download App Image ---------------------------------------------------------------------------------------#
+
 mkdir "$APPIMAGE"
-wget -c "$URL_EMAGE"       -P "$APPIMAGE"
+
 wget -c "$URL_SCREENCLOUD" -P "$APPIMAGE"
+wget -c "$URL_FONTBASE"    -P "$APPIMAGE"
+wget -c "$URL_SHOWPLAYER"  -P "$APPIMAGE"
+wget -c "$URL_REAPER"      -P "$APPIMAGE"
+wget -c "$URL_SWEETHOME3d" -P "$APPIMAGE"
+wget -c "$URL_FILESYNC"    -P "$APPIMAGE"
+
+echo "Instalando programas dos PPA's"
+
+#Instala os apps via repositório --------------------------------------------------------------------------#
+
+#PPA de terceiros
+
+sudo apt install pulseeffects -y
+sudo apt install obs-studio -y
 
 #PPA
-apt-get install qbittorrent -y
-apt-get install pulseeffects -y
-apt-get install SimpleScreenRecorder -y
-apt-get install spotify -y
-apt-get install steam -y
 
-#Flatpak
+sudo apt install SimpleScreenRecorder -y
+sudo apt install flameshot -y
+sudo apt install darktable -y
+sudo apt install audacity -y
+sudo apt install spotify-client -y
+sudo apt install steam -y
+sudo apt install virtualbox -y
+sudo apt install mint-meta-codecs -y
+sudo apt install gparted -y
+sudo apt install p7zip-full -y
+sudo apt install psensor -y
+sudo apt install hplip-gui -y
+sudo apt install pavucontrol -y
+
+echo "Iinstalando programas em Flatpak"
+
+#Flatpak --------------------------------------------------------------------------------------------------#
+
 flatpak install flathub org.gimp.GIMP -y
+flatpak install flathub org.gimp.GIMP.Plugin.GMic -y
 flatpak install flathub org.inkscape.Inkscape -y
+flatpak install flathub org.kde.krita -y
+flatpak install flathub org.kde.kdenlive -y
+
+#flatpak install flathub com.sweethome3d.Sweethome3d
+#flatpak install flathub com.github.muriloventuroso.pdftricks
+#flatpak install flathub org.qbittorrent.qBittorrent
+#flatpak install flathub com.uploadedlobster.peek
+#flatpak install flathub org.ardour.Ardour
+#flatpak install flathub cc.arduino.arduinoide
+
+#Removendo programas --------------------------------------------------------------------------------------#
+
+sudo apt remove hexchat -y
+sudo apt remove thunderbird -y
+sudo apt remove drawing -y
+
+#Atualização e limpeza do sistema -------------------------------------------------------------------------#
+
+flatpak update
+
+flatpak uninstall --unused -y
+
+sudo apt update -y
+sudo apt autoremove -y
+sudo apt autoclean -y
+
+echo "Instalação finalizada !"
