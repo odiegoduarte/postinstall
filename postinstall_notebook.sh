@@ -25,7 +25,7 @@ fi
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.12.5-1_amd64.deb"
+URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.13.0-1_amd64.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.2/ipscan_3.7.2_amd64.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
@@ -33,7 +33,7 @@ URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
-URL_REAPER="https://dlcf.reaper.fm/6.x/reaper612c_linux_x86_64.tar.xz"
+URL_REAPER="https://dlcf.reaper.fm/6.x/reaper613_linux_x86_64.tar.xz"
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
 
