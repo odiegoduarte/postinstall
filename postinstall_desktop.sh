@@ -26,17 +26,17 @@ PPA_OBS="ppa:obsproject/obs-studio"
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/69.0.3686.36/linux/opera-stable_69.0.3686.36_amd64.deb"
+URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/70.0.3728.106/linux/opera-stable_70.0.3728.106_amd64.deb"
 #URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
-#URL_ANYDESK="https://download.anydesk.com/linux/anydesk_5.5.6-1_amd64.deb?_ga=2.34949865.93870553.1593317662-658123471.1593317662"
-URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb"
+#URL_ANYDESK="https://download.anydesk.com/linux/anydesk_6.0.0-1_amd64.deb"
+URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.11/discord-0.0.11.deb"
 URL_RAMME="https://github.com/terkelg/ramme/releases/download/v3.2.5/Ramme_3.2.5_amd64.deb"
-URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.12.5-1_amd64.deb"
+URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.13.0-1_amd64.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.2/ipscan_3.7.2_amd64.deb"
-URL_SKYPE="https://repo.skype.com/latest/skypeforlinux-64.deb"
+URL_SKYPE="https://repo.skype.com/latest/skypeforlinux-64.debh"
 URL_PEAZIP="https://sourceforge.net/projects/peazip/files/7.3.2/peazip_7.3.2.LINUX.x86_64.GTK2.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
-URL_VSCODE="https://az764295.vo.msecnd.net/stable/cd9ea6488829f560dc949a8b2fb789f3cdc05f5d/code_1.46.1-1592428892_amd64.deb"
+URL_VSCODE="https://az764295.vo.msecnd.net/stable/db40434f562994116e5b21c24015a2e40b2504e6/code_1.48.0-1597304990_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
@@ -44,7 +44,7 @@ URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_
 URL_SCREENCLOUD="https://github.com/olav-st/screencloud/releases/download/v1.5.1/ScreenCloud-v1.5.1-x86_64.AppImage"
 URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.11.3.AppImage"
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
-URL_REAPER="https://dlcf.reaper.fm/6.x/reaper612c_linux_x86_64.tar.xz"
+URL_REAPER="https://dlcf.reaper.fm/6.x/reaper613_linux_x86_64.tar.xz"
 URL_SWEETHOME3d="https://ufpr.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.3/SweetHome3D-6.3-linux-x64.tgz"
 URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_10.25_Linux.tar.gz"
 
