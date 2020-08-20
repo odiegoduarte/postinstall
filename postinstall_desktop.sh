@@ -42,11 +42,11 @@ URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
 URL_SCREENCLOUD="https://github.com/olav-st/screencloud/releases/download/v1.5.1/ScreenCloud-v1.5.1-x86_64.AppImage"
-URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.11.3.AppImage"
+URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.13.2.AppImage"
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
 URL_REAPER="https://dlcf.reaper.fm/6.x/reaper613_linux_x86_64.tar.xz"
-URL_SWEETHOME3d="https://ufpr.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.3/SweetHome3D-6.3-linux-x64.tgz"
-URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_10.25_Linux.tar.gz"
+URL_SWEETHOME3d="https://ufpr.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.4.2/SweetHome3D-6.4.2-linux-x64.tgz"
+URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_11.0_Linux.tar.gz"
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
 
@@ -154,6 +154,8 @@ sudo apt install p7zip-full -y
 sudo apt install psensor -y
 sudo apt install hplip-gui -y
 sudo apt install pavucontrol -y
+sudo apt install adb -y
+sudo apt install scrcpy -y
 
 echo "Iinstalando programas em Flatpak"
 
@@ -164,13 +166,8 @@ flatpak install flathub org.gimp.GIMP.Plugin.GMic -y
 flatpak install flathub org.inkscape.Inkscape -y
 flatpak install flathub org.kde.krita -y
 flatpak install flathub org.kde.kdenlive -y
-
-#flatpak install flathub com.sweethome3d.Sweethome3d
-#flatpak install flathub com.github.muriloventuroso.pdftricks
-#flatpak install flathub org.qbittorrent.qBittorrent
-#flatpak install flathub com.uploadedlobster.peek
-#flatpak install flathub org.ardour.Ardour
-#flatpak install flathub cc.arduino.arduinoide
+flatpak install flathub org.qbittorrent.qBittorrent -y
+flatpak install flathub org.ardour.Ardour -y
 
 #Removendo programas --------------------------------------------------------------------------------------#
 
