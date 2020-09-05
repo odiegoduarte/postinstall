@@ -20,7 +20,7 @@ fi
 
 #Variáveis PPA --------------------------------------------------------------------------------------------#
 
-#
+PPA_NVIDIA="ppa:graphics-drivers/ppa"
 
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
@@ -56,7 +56,7 @@ sudo rm /var/cache/apt/archives/lock
 
 #Adicionando PPA ------------------------------------------------------------------------------------------#
 
-#
+sudo apt-add-repository "$PPA_NVIDIA" -y
 
 #Atualizando o repositório --------------------------------------------------------------------------------#
 
@@ -113,7 +113,7 @@ sudo apt install spotify-client -y
 sudo apt install steam -y
 sudo apt install mint-meta-codecs -y
 sudo apt install p7zip-full -y
-sudo apt install pavucontrol -y
+#sudo apt install pavucontrol -y
 sudo apt install adb -y
 sudo apt install scrcpy -y
 
@@ -125,7 +125,7 @@ flatpak install flathub org.gimp.GIMP -y
 flatpak install flathub org.gimp.GIMP.Plugin.GMic -y
 flatpak install flathub org.inkscape.Inkscape -y
 flatpak install flathub org.kde.kdenlive -y
-flatpak install flathub org.ardour.Ardour
+flatpak install flathub org.ardour.Ardour -y
 
 #Atualização e limpeza do sistema -------------------------------------------------------------------------#
 

@@ -22,11 +22,12 @@ fi
 
 PPA_PULSE_EFFECTS="ppa:mikhailnov/pulseeffects"
 PPA_OBS="ppa:obsproject/obs-studio"
+PPA_NVIDIA="ppa:graphics-drivers/ppa"
 
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/70.0.3728.106/linux/opera-stable_70.0.3728.106_amd64.deb"
+URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/70.0.3728.154/linux/opera-stable_70.0.3728.154_amd64.deb"
 #URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
 #URL_ANYDESK="https://download.anydesk.com/linux/anydesk_6.0.0-1_amd64.deb"
 URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.11/discord-0.0.11.deb"
@@ -34,9 +35,9 @@ URL_RAMME="https://github.com/terkelg/ramme/releases/download/v3.2.5/Ramme_3.2.5
 URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.13.0-1_amd64.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.2/ipscan_3.7.2_amd64.deb"
 URL_SKYPE="https://repo.skype.com/latest/skypeforlinux-64.deb"
-URL_PEAZIP="https://sourceforge.net/projects/peazip/files/7.3.2/peazip_7.3.2.LINUX.x86_64.GTK2.deb"
+URL_PEAZIP="https://sourceforge.net/projects/peazip/files/7.4.0/peazip_7.4.0.LINUX.x86_64.GTK2.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
-URL_VSCODE="https://az764295.vo.msecnd.net/stable/db40434f562994116e5b21c24015a2e40b2504e6/code_1.48.0-1597304990_amd64.deb"
+URL_VSCODE="https://az764295.vo.msecnd.net/stable/a0479759d6e9ea56afa657e454193f72aef85bd0/code_1.48.2-1598353430_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
@@ -46,7 +47,7 @@ URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.13.2.AppImage"
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
 URL_REAPER="https://dlcf.reaper.fm/6.x/reaper613_linux_x86_64.tar.xz"
 URL_SWEETHOME3d="https://ufpr.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.4.2/SweetHome3D-6.4.2-linux-x64.tgz"
-URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_11.0_Linux.tar.gz"
+URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_11.1_Linux.tar.gz"
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
 
@@ -73,6 +74,7 @@ sudo rm /var/cache/apt/archives/lock
 
 sudo apt-add-repository "$PULSE_EFFECTS" -y
 sudo apt-add-repository "$PPA_OBS" -y
+sudo apt-add-repository "$PPA_NVIDIA" -y
 
 #Atualizando o repositório --------------------------------------------------------------------------------#
 
@@ -153,7 +155,7 @@ sudo apt install gparted -y
 sudo apt install p7zip-full -y
 sudo apt install psensor -y
 sudo apt install hplip-gui -y
-sudo apt install pavucontrol -y
+#sudo apt install pavucontrol -y
 sudo apt install adb -y
 sudo apt install scrcpy -y
 
