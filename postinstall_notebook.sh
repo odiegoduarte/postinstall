@@ -21,6 +21,7 @@ fi
 #Variáveis PPA --------------------------------------------------------------------------------------------#
 
 PPA_NVIDIA="ppa:graphics-drivers/ppa"
+PPA_BT="ppa:blaze/rtbth-dkms"
 
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
@@ -29,11 +30,13 @@ URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.13.0-1_amd64.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.2/ipscan_3.7.2_amd64.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
+URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.12/discord-0.0.12.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
 URL_REAPER="https://dlcf.reaper.fm/6.x/reaper613_linux_x86_64.tar.xz"
+URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.13.2.AppImage"
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
 
@@ -57,6 +60,7 @@ sudo rm /var/cache/apt/archives/lock
 #Adicionando PPA ------------------------------------------------------------------------------------------#
 
 sudo apt-add-repository "$PPA_NVIDIA" -y
+sudo apt-add-repository "$PPA_BT" -y
 
 #Atualizando o repositório --------------------------------------------------------------------------------#
 
@@ -88,6 +92,7 @@ wget -c "$URL_4K"         -P "$DEB"
 wget -c "$URL_ANGRYIP"    -P "$DEB"
 wget -c "$URL_STACER"     -P "$DEB"
 wget -c "$URL_EMAGE"      -P "$DEB"
+wget -c "$URL_DISCORD"    -P "$DEB"
 
 sudo dpkg -i $DEB/*.deb
 sudo apt-get install -f -y
@@ -100,11 +105,17 @@ mkdir "$APPIMAGE"
 
 wget -c "$URL_SHOWPLAYER"  -P "$APPIMAGE"
 wget -c "$URL_REAPER"      -P "$APPIMAGE"
-wget -c "$URL_VSXU"        -P "$APPIMAGE"
+wget -c "$URL_FONTBASE"    -P "$APPIMAGE"
 
 echo "Instalando programas do repositório"
 
-#Instala os apps do repositório ---------------------------------------------------------------------------#
+#Instala os apps via repositório ---------------------------------------------------------------------------#
+
+#PPA de terceiros
+
+sudo apt install rtbth-dkms -y
+
+#PPA
 
 sudo apt install linssid -y
 sudo apt install SimpleScreenRecorder -y
