@@ -24,7 +24,7 @@ postintall_desktop.sh | Shellscript criado para usso pessoal  20.04 LTS
 
 ~~~javascript
 
-#Variáveis PPA --------------------------------------------------------------------------------------------#
+#Variáveis PPA -------------------------------------------------------------------------------------#
 
  PPA_OBS="ppa:obsproject/obs-studio"
 |-------| |------------------------| 
@@ -36,7 +36,7 @@ postintall_desktop.sh | Shellscript criado para usso pessoal  20.04 LTS
 ~~~
 ---
 ~~~javascript
-#Variáveis.deb --------------------------------------------------------------------------------------------#
+#Variáveis.deb -------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 |-------|  |------------------------------------------------------------------------| 
@@ -47,10 +47,10 @@ URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd6
 ~~~
 ---
 ~~~javascript
-#Variáveis AppImage ---------------------------------------------------------------------------------------#
+#Variáveis AppImage --------------------------------------------------------------------------------#
 
 URL_EMAGE"https://github.com/douglasjunior/emage/releases/download/1.1.0/emage-1.1.0-x86_64.AppImage"
-|--------| |-----------------------------------------------------------------------------------------| 
+|--------| |----------------------------------------------------------------------------------------| 
     |                                                   |
     |                                                   |------ URL do seu .AppImage
     | 
@@ -58,7 +58,7 @@ URL_EMAGE"https://github.com/douglasjunior/emage/releases/download/1.1.0/emage-1
 ~~~
 ---
 ~~~javascript
-#Variáveis de pasta ---------------------------------------------------------------------------------------#
+#Variáveis de pasta --------------------------------------------------------------------------------#
 
 DEB="$HOME/Downloads/DEB"
 APPIMAGE="$HOME/Apps"
@@ -72,7 +72,7 @@ THEMES="$HOME/.themes"
 ~~~
 ---
 ~~~javascript
-#Adicionando PPA ------------------------------------------------------------------------------------------#
+#Adicionando PPA -----------------------------------------------------------------------------------#
 
 sudo apt-add-repository "$PPA_OBS" -y
 |---------------------| |--------|
@@ -83,7 +83,7 @@ sudo apt-add-repository "$PPA_OBS" -y
 ~~~
 ---
 ~~~javascript
-#Download DEB ---------------------------------------------------------------------------------------------#
+#Download DEB --------------------------------------------------------------------------------------#
 
 O comando mkdir cria uma pasta
 
@@ -105,7 +105,7 @@ mkdir "$DEB"
 ~~~
 ---
 ~~~javascript
-#Instala os apps via repositório --------------------------------------------------------------------------#
+#Instala os apps via repositório -------------------------------------------------------------------#
 
 #PPA de terceiros             
   sudo apt install obs-studio -y
