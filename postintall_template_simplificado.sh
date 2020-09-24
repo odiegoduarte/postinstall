@@ -6,36 +6,19 @@
 #Variáveis PPA --------------------------------------------------------------------------------------------#
 
  PPA_OBS="ppa:obsproject/obs-studio"
-#
-#
-#
+
 
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-# 
-# 
-#
-
-#Variáveis AppImage ---------------------------------------------------------------------------------------#
-
-URL_EMAGE"https://github.com/douglasjunior/emage/releases/download/1.1.0/emage-1.1.0-x86_64.AppImage"
-
-
-#Variáveis Personalização ---------------------------------------------------------------------------------#
-
-URL_QOGIR="https://raw.githubusercontent.com/vinceliuice/Qogir-theme/releases/Qogir-dark.tar.xz"
-URL_PAPIRUS="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/master.zip"
 
 
 #Variáveis de pasta ---------------------------------------------------------------------------------------#
 
 DEB="$HOME/Downloads/DEB"
-APPIMAGE="$HOME/Apps"
-ICONS="$HOME/.icons"
-THEMES="$HOME/.themes"
 
-#Removendo travas do APT -----------------------------------------------------------------------------------#
+
+#Removendo travas do APT ----------------------------------------------------------------------------------#
 
 sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/cache/apt/archives/lock
@@ -48,20 +31,6 @@ sudo apt-add-repository "$PPA_OBS" -y
 
 sudo apt update -y
 
-#Personalização -------------------------------------------------------------------------------------------#
-
-wget -c "$URL_QOGIR"     -P "$THEMES"
-wget -c "$URL_PAPIRUS"   -P "$ICONS"
-
-cd "$THEMES"
-tar -xvf *.tar.xz
-
-cd "$ICONS"
-unzip *.zip
-
-#O comando cd é para acessar a pasta e os comandos "tar" e "unzip" são para extrair os arquivos compactados.
-
-
 #Download DEB ---------------------------------------------------------------------------------------------#
 
 mkdir "$DEB"
@@ -69,12 +38,6 @@ wget -c "$URL_CHROME"     -P "$DEB"
 
 sudo dpkg -i $DEB/*.deb
 sudo apt-get install -f -y
-
-#Download AppImage ----------------------------------------------------------------------------------------#
-
-mkdir "$APPIMAGE"
-
-wget -c "$URL_EMAGE"       -P "$APPIMAGE"
 
 #Instala os apps via repositório --------------------------------------------------------------------------#
 
