@@ -27,27 +27,27 @@ PPA_NVIDIA="ppa:graphics-drivers/ppa"
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/71.0.3770.171/linux/opera-stable_71.0.3770.171_amd64.deb"
+URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/72.0.3815.148/linux/opera-stable_72.0.3815.148_amd64.deb"
 #URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
 #URL_ANYDESK="https://download.anydesk.com/linux/anydesk_6.0.0-1_amd64.deb"
 URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.12/discord-0.0.12.deb"
 URL_RAMME="https://github.com/terkelg/ramme/releases/download/v3.2.5/Ramme_3.2.5_amd64.deb"
-URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.13.1-1_amd64.deb"
+URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.13.3-1_amd64.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.2/ipscan_3.7.2_amd64.deb"
 URL_SKYPE="https://repo.skype.com/latest/skypeforlinux-64.deb"
-URL_PEAZIP="https://sourceforge.net/projects/peazip/files/7.4.1/peazip_7.4.1.LINUX.x86_64.GTK2.deb"
+URL_PEAZIP="https://sourceforge.net/projects/peazip/files/7.4.2/peazip_7.4.2.LINUX.x86_64.GTK2.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
-URL_VSCODE="https://az764295.vo.msecnd.net/stable/58bb7b2331731bf72587010e943852e13e6fd3cf/code_1.49.1-1600299189_amd64.deb"
+URL_VSCODE="https://az764295.vo.msecnd.net/stable/d2e414d9e4239a252d1ab117bd7067f125afd80a/code_1.50.1-1602600906_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
-URL_SCREENCLOUD="https://github.com/olav-st/screencloud/releases/download/v1.5.1/ScreenCloud-v1.5.1-x86_64.AppImage"
+URL_SCREENCLOUD="https://github.com/olav-st/screencloud/releases/download/v1.5.2/ScreenCloud-v1.5.2-x86_64.AppImage"
 URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.13.2.AppImage"
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
-URL_REAPER="https://dlcf.reaper.fm/6.x/reaper614_linux_x86_64.tar.xz"
+URL_REAPER="https://dlcf.reaper.fm/6.x/reaper615_linux_x86_64.tar.xz"
 URL_SWEETHOME3d="https://ufpr.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.4.2/SweetHome3D-6.4.2-linux-x64.tgz"
-URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_11.1_Linux.tar.gz"
+URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_11.2_Linux.tar.gz"
 URL_GUISCRCPY="https://github.com/srevinsaju/guiscrcpy/releases/download/v4.7.2/guiscrcpy-4.7.2.r.glibc2.27-x86_64.AppImage"
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
