@@ -14,8 +14,8 @@ postinstall_ | sobre
 :------ | :------ 
 postintall_template.sh | Template base para você criar seu próprio shellscript automatizado.
 postintall_template_simplificado.sh | Template simplificado para você criar seu próprio shellscript automatizado.
-postintall_notebook.sh | Shellscript criado para usso pessoal 20.04 LTS
-postintall_desktop.sh | Shellscript criado para usso pessoal  20.04 LTS
+postintall_notebook_mint20.sh | Shellscript criado para usso pessoal 20.04 LTS
+postintall_desktop_mint20.sh | Shellscript criado para usso pessoal  20.04 LTS
 
 
 <br> <br>
