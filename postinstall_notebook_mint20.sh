@@ -26,11 +26,12 @@ PPA_BT="ppa:blaze/rtbth-dkms"
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.13.3-1_amd64.deb"
-URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.2/ipscan_3.7.2_amd64.deb"
+URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.13.4-1_amd64.deb"
+URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.3/ipscan_3.7.3_amd64.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.12/discord-0.0.12.deb"
+URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v1.20.5/buttercup-desktop_1.20.5_amd64.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
@@ -93,6 +94,7 @@ wget -c "$URL_ANGRYIP"    -P "$DEB"
 wget -c "$URL_STACER"     -P "$DEB"
 wget -c "$URL_EMAGE"      -P "$DEB"
 wget -c "$URL_DISCORD"    -P "$DEB"
+wget -c "$URL_BUTTERCUP"  -P "$DEB"
 
 sudo dpkg -i $DEB/*.deb
 sudo apt-get install -f -y
