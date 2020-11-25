@@ -2,6 +2,7 @@
 
 #Criado por Diego Duarte 2020
 #Esse shellscript criado com base no Linux Mint 20 LTS.
+#Link do projeto no Github https://github.com/odiegoduarte/postinstall
 
 {
     for ((i = 0 ; i <= 100 ; i+=7)); do
