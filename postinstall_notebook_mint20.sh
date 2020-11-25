@@ -120,15 +120,16 @@ sudo apt install rtbth-dkms -y
 #PPA
 
 sudo apt install linssid -y
+sudo apt install wireshark -y
 sudo apt install SimpleScreenRecorder -y
 sudo apt install audacity -y
 sudo apt install spotify-client -y
 sudo apt install steam -y
 sudo apt install mint-meta-codecs -y
 sudo apt install p7zip-full -y
-#sudo apt install pavucontrol -y
 sudo apt install adb -y
 sudo apt install scrcpy -y
+#sudo apt install pavucontrol -y
 
 echo "Instalando programas em Flatpak"
 

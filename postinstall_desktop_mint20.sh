@@ -27,7 +27,7 @@ PPA_NVIDIA="ppa:graphics-drivers/ppa"
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/72.0.3815.320/linux/opera-stable_72.0.3815.320_amd64.deb"
+URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/72.0.3815.378/linux/opera-stable_72.0.3815.378_amd64.deb"
 #URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
 #URL_ANYDESK="https://download.anydesk.com/linux/anydesk_6.0.1-1_amd64.deb"
 URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.12/discord-0.0.12.deb"
@@ -40,6 +40,8 @@ URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_am
 URL_VSCODE="https://az764295.vo.msecnd.net/stable/e5a624b788d92b8d34d1392e4c4d9789406efe8f/code_1.51.1-1605051630_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v1.20.5/buttercup-desktop_1.20.5_amd64.deb"
+URL_WEBSOCKET"https://github.com/Palakis/obs-websocket/releases/download/4.8.0/obs-websocket-4.8.0-1_amd64.deb"
+URL_DECKBOARD"https://github.com/rivafarabi/deckboard/releases/download/v1.9.82/deckboard_1.9.82_amd64.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
@@ -118,6 +120,8 @@ wget -c "$URL_STACER"     -P "$DEB"
 wget -c "$URL_VSCODE"     -P "$DEB"
 wget -c "$URL_EMAGE"      -P "$DEB"
 wget -c "$URL_BUTTERCUP"  -P "$DEB"
+wget -c "$URL_WEBSOCKET"  -P "$DEB"
+wget -c "$URL_DECKBOARD"  -P "$DEB"
 
 sudo dpkg -i $DEB/*.deb
 sudo apt-get install -f -y
@@ -160,9 +164,10 @@ sudo apt install gparted -y
 sudo apt install p7zip-full -y
 sudo apt install psensor -y
 sudo apt install hplip-gui -y
-#sudo apt install pavucontrol -y
 sudo apt install adb -y
 sudo apt install scrcpy -y
+sudo apt install git -y
+#sudo apt install pavucontrol -y
 
 echo "Iinstalando programas em Flatpak"
 
