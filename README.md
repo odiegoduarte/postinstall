@@ -123,9 +123,9 @@ mkdir "$DEB"
 - [Operações básicas de gestão de pacotes.](https://www.debian.org/doc/manuals/debian-reference/ch02.pt.html#_basic_package_management_operations)
 - [Ubuntu Manpage apt command-line interface.](https://manpages.ubuntu.com/manpages/focal/man8/apt.8.html)
 - [Whiptail.](https://en.wikibooks.org/wiki/Bash_Shell_Scripting/)
--[Ubuntu Beginners/BashScripting](https://help.ubuntu.com/community/Beginners/BashScripting)
--[Introdução à programação Shell](http://www.faqs.org/docs/air/tsshell.html)
--[Programando em shell script](http://www.devin.com.br/shell_script/)
+- [Ubuntu Beginners/BashScripting](https://help.ubuntu.com/community/Beginners/BashScripting)
+- [Introdução à programação Shell](http://www.faqs.org/docs/air/tsshell.html)
+- [Programando em shell script](http://www.devin.com.br/shell_script/)
 
 
 <br>
