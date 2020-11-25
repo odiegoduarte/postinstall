@@ -16,7 +16,7 @@ postintall_template.sh | Template base para você criar seu próprio shellscript
 postintall_template_simplificado.sh | Template simplificado para você criar seu próprio shellscript automatizado.
 postintall_notebook_mint20.sh | Shellscript criado para usso pessoal Mint 20 LTS
 postintall_desktop_mint20.sh | Shellscript criado para usso pessoal Mint 20 LTS
-
+postinstall_lutris+wine.sh | Shellscript instala o Lutris + Wine + Libs Vulkan
 
 <br> <br>
 
