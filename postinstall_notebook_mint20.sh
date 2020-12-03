@@ -27,17 +27,18 @@ PPA_BT="ppa:blaze/rtbth-dkms"
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.13.4-1_amd64.deb"
+URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.13.5-1_amd64.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.3/ipscan_3.7.3_amd64.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.12/discord-0.0.12.deb"
 URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v1.20.5/buttercup-desktop_1.20.5_amd64.deb"
+URL_QLIGHT"https://www.qlcplus.org/downloads/4.12.3/qlcplus_4.12.3_amd64.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
-URL_REAPER="https://dlcf.reaper.fm/6.x/reaper615_linux_x86_64.tar.xz"
+URL_REAPER="https://dlcf.reaper.fm/6.x/reaper618_linux_x86_64.tar.xz"
 URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.13.2.AppImage"
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
@@ -96,6 +97,7 @@ wget -c "$URL_STACER"     -P "$DEB"
 wget -c "$URL_EMAGE"      -P "$DEB"
 wget -c "$URL_DISCORD"    -P "$DEB"
 wget -c "$URL_BUTTERCUP"  -P "$DEB"
+wget -c "$URL_QLIGHT"     -P "$DEB"
 
 sudo dpkg -i $DEB/*.deb
 sudo apt-get install -f -y
