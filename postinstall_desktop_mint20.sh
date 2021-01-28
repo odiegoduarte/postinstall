@@ -28,32 +28,32 @@ PPA_NVIDIA="ppa:graphics-drivers/ppa"
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/73.0.3856.284/linux/opera-stable_73.0.3856.284_amd64.deb"
+URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/73.0.3856.344/linux/opera-stable_73.0.3856.344_amd64.deb"
 #URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
 #URL_ANYDESK="https://download.anydesk.com/linux/anydesk_6.0.1-1_amd64.deb"
 URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.13/discord-0.0.13.deb"
-URL_RAMME="https://github.com/terkelg/ramme/releases/download/v3.2.5/Ramme_3.2.5_amd64.deb"
-URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.13.5-1_amd64.deb"
-URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.3/ipscan_3.7.3_amd64.deb"
+URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.14.2-1_amd64.deb"
+URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.4/ipscan_3.7.4_amd64.deb"
 URL_SKYPE="https://repo.skype.com/latest/skypeforlinux-64.deb"
-URL_PEAZIP="https://sourceforge.net/projects/peazip/files/7.6.0/peazip_7.6.0.LINUX.x86_64.GTK2.deb"
+URL_PEAZIP="https://sourceforge.net/projects/peazip/files/7.7.0/peazip_7.7.0.LINUX.x86_64.GTK2.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
 URL_VSCODE="https://az764295.vo.msecnd.net/stable/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/code_1.52.1-1608136922_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v1.20.5/buttercup-desktop_1.20.5_amd64.deb"
 URL_WEBSOCKET"https://github.com/Palakis/obs-websocket/releases/download/4.8.0/obs-websocket-4.8.0-1_amd64.deb"
-URL_DECKBOARD"https://github.com/rivafarabi/deckboard/releases/download/v1.9.84/deckboard_1.9.84_amd64.deb"
+URL_DECKBOARD"https://github.com/rivafarabi/deckboard/releases/download/v1.9.82/deckboard_1.9.82_amd64.deb"
 URL_QLIGHT"https://www.qlcplus.org/downloads/4.12.3/qlcplus_4.12.3_amd64.deb"
+URL_DRAWIO"https://github.com/jgraph/drawio-desktop/releases/download/v14.1.8/draw.io-amd64-14.1.8.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
 URL_SCREENCLOUD="https://github.com/olav-st/screencloud/releases/download/v1.5.3/ScreenCloud-v1.5.3-x86_64.AppImage"
 URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.14.0.AppImage"
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
-URL_REAPER="https://dlcf.reaper.fm/6.x/reaper619_linux_x86_64.tar.xz"
+URL_REAPER="https://www.reaper.fm/files/6.x/reaper621_linux_x86_64.tar.xz"
 URL_SWEETHOME3d="https://ufpr.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.4.2/SweetHome3D-6.4.2-linux-x64.tgz"
-URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_11.4_Linux.tar.gz"
-URL_GUISCRCPY="https://github.com/srevinsaju/guiscrcpy/releases/download/v4.7.4/guiscrcpy-4.7.4.r.glibc2.27-x86_64.AppImage"
+URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_11.5_Linux.tar.gz"
+URL_GUISCRCPY="https://github.com/srevinsaju/guiscrcpy/releases/download/v4.9.0/guiscrcpy-4.9.0.dev.r.glibc2.27-x86_64.AppImage"
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
 
@@ -113,7 +113,6 @@ wget -c "$URL_OPERA"      -P "$DEB"
 #wget -c "$URL_TEAMVIEWER" -P "$DEB"
 #wget -c "$URL_ANYDESK"    -P "$DEB"
 wget -c "$URL_DISCORD"    -P "$DEB"
-wget -c "$URL_RAMME"      -P "$DEB"
 wget -c "$URL_4K"         -P "$DEB"
 wget -c "$URL_ANGRYIP"    -P "$DEB"
 wget -c "$URL_SKYPE"      -P "$DEB"
@@ -125,6 +124,7 @@ wget -c "$URL_BUTTERCUP"  -P "$DEB"
 wget -c "$URL_WEBSOCKET"  -P "$DEB"
 wget -c "$URL_DECKBOARD"  -P "$DEB"
 wget -c "$URL_QLIGHT"     -P "$DEB"
+wget -c "$URL_DRAWIO"     -P "$DEB"
 
 sudo dpkg -i $DEB/*.deb
 sudo apt-get install -f -y
@@ -171,6 +171,7 @@ sudo apt install adb -y
 sudo apt install scrcpy -y
 sudo apt install git -y
 sudo apt install pavucontrol -y
+sudo apt install virt-viewer -y
 
 echo "Iinstalando programas em Flatpak"
 
@@ -189,6 +190,7 @@ flatpak install flathub org.ardour.Ardour -y
 sudo apt remove hexchat -y
 sudo apt remove thunderbird -y
 sudo apt remove drawing -y
+sudo apt remove hypnotix -y
 
 #Atualização e limpeza do sistema -------------------------------------------------------------------------#
 
