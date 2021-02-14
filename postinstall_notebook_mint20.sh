@@ -27,14 +27,15 @@ PPA_BT="ppa:blaze/rtbth-dkms"
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.14.2-1_amd64.deb"
-URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.4/ipscan_3.7.4_amd64.deb"
+URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.14.3-1_amd64.deb"
+URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.5/ipscan_3.7.5_amd64.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.13/discord-0.0.13.deb"
 URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v1.20.5/buttercup-desktop_1.20.5_amd64.deb"
 URL_QLIGHT"https://www.qlcplus.org/downloads/4.12.3/qlcplus_4.12.3_amd64.deb"
 URL_DRAWIO"https://github.com/jgraph/drawio-desktop/releases/download/v14.1.8/draw.io-amd64-14.1.8.deb"
+URL_LANSHARE"https://github.com/abdularis/LAN-Share/releases/download/1.2.1/lanshare_1.2.1-1_amd64.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
@@ -100,6 +101,7 @@ wget -c "$URL_DISCORD"    -P "$DEB"
 wget -c "$URL_BUTTERCUP"  -P "$DEB"
 wget -c "$URL_QLIGHT"     -P "$DEB"
 wget -c "$URL_DRAWIO"     -P "$DEB"
+wget -c "$URL_LANSHARE"   -P "$DEB"
 
 sudo dpkg -i $DEB/*.deb
 sudo apt-get install -f -y

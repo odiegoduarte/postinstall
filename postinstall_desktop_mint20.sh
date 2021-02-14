@@ -32,28 +32,30 @@ URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/73.0.3856.344/linux/
 #URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
 #URL_ANYDESK="https://download.anydesk.com/linux/anydesk_6.0.1-1_amd64.deb"
 URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.13/discord-0.0.13.deb"
-URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.14.2-1_amd64.deb"
-URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.4/ipscan_3.7.4_amd64.deb"
+URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.14.3-1_amd64.deb"
+URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.5/ipscan_3.7.5_amd64.deb"
 URL_SKYPE="https://repo.skype.com/latest/skypeforlinux-64.deb"
-URL_PEAZIP="https://sourceforge.net/projects/peazip/files/7.7.0/peazip_7.7.0.LINUX.x86_64.GTK2.deb"
+URL_PEAZIP="https://github.com/peazip/PeaZip/releases/download/7.7.1/peazip_7.7.1.LINUX.x86_64.GTK2.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
-URL_VSCODE="https://az764295.vo.msecnd.net/stable/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/code_1.52.1-1608136922_amd64.deb"
+URL_VSCODE="https://az764295.vo.msecnd.net/stable/622cb03f7e070a9670c94bae1a45d78d7181fbd4/code_1.53.2-1613044664_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v1.20.5/buttercup-desktop_1.20.5_amd64.deb"
 URL_WEBSOCKET"https://github.com/Palakis/obs-websocket/releases/download/4.8.0/obs-websocket-4.8.0-1_amd64.deb"
-URL_DECKBOARD"https://github.com/rivafarabi/deckboard/releases/download/v1.9.82/deckboard_1.9.82_amd64.deb"
+URL_DECKBOARD"https://github.com/rivafarabi/deckboard/releases/download/v1.9.85/deckboard_1.9.85_amd64.deb"
 URL_QLIGHT"https://www.qlcplus.org/downloads/4.12.3/qlcplus_4.12.3_amd64.deb"
 URL_DRAWIO"https://github.com/jgraph/drawio-desktop/releases/download/v14.1.8/draw.io-amd64-14.1.8.deb"
+URL_LANSHARE"https://github.com/abdularis/LAN-Share/releases/download/1.2.1/lanshare_1.2.1-1_amd64.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
 URL_SCREENCLOUD="https://github.com/olav-st/screencloud/releases/download/v1.5.3/ScreenCloud-v1.5.3-x86_64.AppImage"
 URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.14.0.AppImage"
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
-URL_REAPER="https://www.reaper.fm/files/6.x/reaper621_linux_x86_64.tar.xz"
+URL_REAPER="https://www.reaper.fm/files/6.x/reaper623_linux_x86_64.tar.xz"
 URL_SWEETHOME3d="https://ufpr.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.4.2/SweetHome3D-6.4.2-linux-x64.tgz"
 URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_11.5_Linux.tar.gz"
 URL_GUISCRCPY="https://github.com/srevinsaju/guiscrcpy/releases/download/v4.9.0/guiscrcpy-4.9.0.dev.r.glibc2.27-x86_64.AppImage"
+URL_ASF="https://github.com/JustArchiNET/ArchiSteamFarm/releases/download/5.0.3.2/ASF-linux-x64.zip"
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
 
@@ -125,6 +127,7 @@ wget -c "$URL_WEBSOCKET"  -P "$DEB"
 wget -c "$URL_DECKBOARD"  -P "$DEB"
 wget -c "$URL_QLIGHT"     -P "$DEB"
 wget -c "$URL_DRAWIO"     -P "$DEB"
+wget -c "$URL_LANSHARE"   -P "$DEB"
 
 sudo dpkg -i $DEB/*.deb
 sudo apt-get install -f -y
@@ -142,7 +145,7 @@ wget -c "$URL_REAPER"      -P "$APPIMAGE"
 wget -c "$URL_SWEETHOME3d" -P "$APPIMAGE"
 wget -c "$URL_FILESYNC"    -P "$APPIMAGE"
 wget -c "$URL_GUISCRCPY"   -P "$APPIMAGE"
-
+wget -c "$URL_ASF"         -P "$APPIMAGE"
 
 echo "Instalando programas dos PPA's"
 
@@ -184,6 +187,7 @@ flatpak install flathub org.kde.krita -y
 flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub org.qbittorrent.qBittorrent -y
 flatpak install flathub org.ardour.Ardour -y
+flatpak install flathub io.github.Soundux
 
 #Removendo programas --------------------------------------------------------------------------------------#
 
