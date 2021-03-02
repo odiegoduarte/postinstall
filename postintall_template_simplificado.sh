@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Criado por Diego Duarte 2020
+# Criado por Diego Duarte 2020 - 2021
 # Template de instalação automatica em Shell Script.
 # Link do projeto no Github https://github.com/odiegoduarte/postinstall
 
 #Variáveis PPA --------------------------------------------------------------------------------------------#
 
- PPA_OBS="ppa:obsproject/obs-studio"
+PPA_OBS="ppa:obsproject/obs-studio"
 
 
 #Variáveis.deb --------------------------------------------------------------------------------------------#
