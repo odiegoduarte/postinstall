@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#Criado por Diego Duarte 2020
-#Esse shellscript criado com base no Linux Mint 20 LTS.
+#Criado por Diego Duarte 2020 - 2021
+#Esse Shell Script criado com base no Linux Mint 20 LTS.
 #Link do projeto no Github https://github.com/odiegoduarte/postinstall
 
 {
@@ -19,6 +19,30 @@ else
     echo "Postinstall cancelado.$6 "
 fi
 
+function print_centered {
+     [[ $# == 0 ]] && return 1
+
+     declare -i TERM_COLS="$(tput cols)"
+     declare -i str_len="${#1}"
+     [[ $str_len -ge $TERM_COLS ]] && {
+          echo "$1";
+          return 0;
+     }
+
+     declare -i filler_len="$(( (TERM_COLS - str_len) / 2 ))"
+     [[ $# -ge 2 ]] && ch="${2:0:1}" || ch=" "
+     filler=""
+     for (( i = 0; i < filler_len; i++ )); do
+          filler="${filler}${ch}"
+     done
+
+     printf "%s%s%s" "$filler" "$1" "$filler"
+     [[ $(( (TERM_COLS - str_len) % 2 )) -ne 0 ]] && printf "%s" "${ch}"
+     printf "\n"
+
+     return 0
+}
+
 #Variáveis PPA --------------------------------------------------------------------------------------------#
 
 PPA_PULSE_EFFECTS="ppa:mikhailnov/pulseeffects"
@@ -28,22 +52,20 @@ PPA_NVIDIA="ppa:graphics-drivers/ppa"
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/73.0.3856.344/linux/opera-stable_73.0.3856.344_amd64.deb"
-#URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
-#URL_ANYDESK="https://download.anydesk.com/linux/anydesk_6.0.1-1_amd64.deb"
+URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/74.0.3911.160/linux/opera-stable_74.0.3911.160_amd64.deb"
+URL_VIVALDI="https://downloads.vivaldi.com/stable/vivaldi-stable_3.6.2165.40-1_amd64.deb"
 URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.13/discord-0.0.13.deb"
-URL_4K="https://dl.4kdownload.com/app/4kvideodownloader_4.14.3-1_amd64.deb"
-URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.5/ipscan_3.7.5_amd64.deb"
+URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.6/ipscan_3.7.6_amd64.deb"
 URL_SKYPE="https://repo.skype.com/latest/skypeforlinux-64.deb"
 URL_PEAZIP="https://github.com/peazip/PeaZip/releases/download/7.7.1/peazip_7.7.1.LINUX.x86_64.GTK2.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
 URL_VSCODE="https://az764295.vo.msecnd.net/stable/622cb03f7e070a9670c94bae1a45d78d7181fbd4/code_1.53.2-1613044664_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v1.20.5/buttercup-desktop_1.20.5_amd64.deb"
-URL_WEBSOCKET"https://github.com/Palakis/obs-websocket/releases/download/4.8.0/obs-websocket-4.8.0-1_amd64.deb"
-URL_DECKBOARD"https://github.com/rivafarabi/deckboard/releases/download/v1.9.85/deckboard_1.9.85_amd64.deb"
+#URL_WEBSOCKET"https://github.com/Palakis/obs-websocket/releases/download/4.8.0/obs-websocket-4.8.0-1_amd64.deb"
+#URL_DECKBOARD"https://github.com/rivafarabi/deckboard/releases/download/v1.9.85/deckboard_1.9.85_amd64.deb"
 URL_QLIGHT"https://www.qlcplus.org/downloads/4.12.3/qlcplus_4.12.3_amd64.deb"
-URL_DRAWIO"https://github.com/jgraph/drawio-desktop/releases/download/v14.1.8/draw.io-amd64-14.1.8.deb"
+URL_DRAWIO"https://github.com/jgraph/drawio-desktop/releases/download/v14.4.3/draw.io-amd64-14.4.3.deb"
 URL_LANSHARE"https://github.com/abdularis/LAN-Share/releases/download/1.2.1/lanshare_1.2.1-1_amd64.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
@@ -71,7 +93,13 @@ ICONS="$HOME/.icons"
 ICONSEX="$HOME/.icons/Extras"
 THEMES="$HOME/.themes"
 
-echo "Adicionando PPA ao Sistema"
+echo -e
+
+print_centered "-"  "-" 
+print_centered "Adicionando PPA ao Sistema"
+print_centered "-"  "-" 
+
+echo -e
 
 #Removendo travas do APT -----------------------------------------------------------------------------------#
 
@@ -88,7 +116,13 @@ sudo apt-add-repository "$PPA_NVIDIA" -y
 
 sudo apt update -y
 
-echo "Baixando temas e icones"
+echo -e
+
+print_centered "-"  "-" 
+print_centered "Baixando temas e icone"
+print_centered "-"  "-" 
+
+echo -e
 
 #Personalização --------------------------------------------------------------------------------------------#
 
@@ -104,7 +138,13 @@ cd "$ICONS"
 unzip *.zip
 #sudo rm "$THEMES" *.zip
 
-echo "Baixando e instalando programas .DEB"
+echo -e
+
+print_centered "-"  "-" 
+print_centered "Baixando e instalando programas .DEB"
+print_centered "-"  "-" 
+
+echo -e
 
 #Download DEB ---------------------------------------------------------------------------------------------#
 
@@ -132,7 +172,13 @@ wget -c "$URL_LANSHARE"   -P "$DEB"
 sudo dpkg -i $DEB/*.deb
 sudo apt-get install -f -y
 
-echo "Baixando e instalando programas APPIMAGE"
+echo -e
+
+print_centered "-"  "-" 
+print_centered "Baixando e instalando programas APPIMAG"
+print_centered "-"  "-" 
+
+echo -e
 
 #Download App Image ---------------------------------------------------------------------------------------#
 
@@ -147,7 +193,13 @@ wget -c "$URL_FILESYNC"    -P "$APPIMAGE"
 wget -c "$URL_GUISCRCPY"   -P "$APPIMAGE"
 wget -c "$URL_ASF"         -P "$APPIMAGE"
 
-echo "Instalando programas dos PPA's"
+echo -e
+
+print_centered "-"  "-" 
+print_centered "Instalando programas dos PPA's"
+print_centered "-"  "-" 
+
+echo -e
 
 #Instala os apps via repositório --------------------------------------------------------------------------#
 
@@ -176,7 +228,13 @@ sudo apt install git -y
 sudo apt install pavucontrol -y
 sudo apt install virt-viewer -y
 
-echo "Iinstalando programas em Flatpak"
+echo -e
+
+print_centered "-"  "-" 
+print_centered "Iinstalando programas em Flatpak"
+print_centered "-"  "-" 
+
+echo -e
 
 #Flatpak --------------------------------------------------------------------------------------------------#
 
@@ -206,4 +264,12 @@ sudo apt update -y
 sudo apt autoremove -y
 sudo apt autoclean -y
 
-echo "Instalação finalizada !"
+echo -e
+
+print_centered "-"  "-" 
+print_centered "Instalação finalizada !"
+print_centered "-"  "-" 
+
+echo -e
+
+#read
