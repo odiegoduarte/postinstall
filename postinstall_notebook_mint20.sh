@@ -64,7 +64,7 @@ URL_LANSHARE"https://github.com/abdularis/LAN-Share/releases/download/1.2.1/lans
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
-URL_REAPER="https://www.reaper.fm/files/6.x/reaper621_linux_x86_64.tar.xz"
+URL_REAPER="https://dlcf.reaper.fm/6.x/reaper625_linux_x86_64.tar.xz"
 URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.14.0.AppImage"
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
@@ -135,7 +135,7 @@ echo -e
 mkdir "$DEB"
 
 wget -c "$URL_CHROME"     -P "$DEB"
-wget -c "$URL_4K"         -P "$DEB"
+wget -c "$URL_VIVALDI"    -P "$DEB"
 wget -c "$URL_ANGRYIP"    -P "$DEB"
 wget -c "$URL_STACER"     -P "$DEB"
 wget -c "$URL_EMAGE"      -P "$DEB"
@@ -180,6 +180,7 @@ sudo apt install rtbth-dkms -y
 
 #PPA
 
+sudo apt install filezilla -y
 sudo apt install linssid -y
 #sudo apt install wireshark -y
 sudo apt install SimpleScreenRecorder -y
@@ -188,11 +189,12 @@ sudo apt install spotify-client -y
 sudo apt install steam -y
 sudo apt install mint-meta-codecs -y
 sudo apt install p7zip-full -y
+sudo apt install hplip-gui -y
 sudo apt install adb -y
 sudo apt install scrcpy -y
 sudo apt install git -y
-#sudo apt install pavucontrol -y
 sudo apt install virt-viewer -y
+#sudo apt install pavucontrol -y
 
 echo -e
 

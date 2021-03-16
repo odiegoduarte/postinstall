@@ -52,14 +52,15 @@ PPA_NVIDIA="ppa:graphics-drivers/ppa"
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/74.0.3911.160/linux/opera-stable_74.0.3911.160_amd64.deb"
+URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/74.0.3911.218/linux/opera-stable_74.0.3911.218_amd64.deb"
 URL_VIVALDI="https://downloads.vivaldi.com/stable/vivaldi-stable_3.6.2165.40-1_amd64.deb"
+URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
 URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.13/discord-0.0.13.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.6/ipscan_3.7.6_amd64.deb"
 URL_SKYPE="https://repo.skype.com/latest/skypeforlinux-64.deb"
 URL_PEAZIP="https://github.com/peazip/PeaZip/releases/download/7.7.1/peazip_7.7.1.LINUX.x86_64.GTK2.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
-URL_VSCODE="https://az764295.vo.msecnd.net/stable/622cb03f7e070a9670c94bae1a45d78d7181fbd4/code_1.53.2-1613044664_amd64.deb"
+URL_VSCODE="https://az764295.vo.msecnd.net/stable/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8/code_1.54.3-1615806378_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v1.20.5/buttercup-desktop_1.20.5_amd64.deb"
 #URL_WEBSOCKET"https://github.com/Palakis/obs-websocket/releases/download/4.8.0/obs-websocket-4.8.0-1_amd64.deb"
@@ -73,11 +74,12 @@ URL_LANSHARE"https://github.com/abdularis/LAN-Share/releases/download/1.2.1/lans
 URL_SCREENCLOUD="https://github.com/olav-st/screencloud/releases/download/v1.5.3/ScreenCloud-v1.5.3-x86_64.AppImage"
 URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.14.0.AppImage"
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
-URL_REAPER="https://www.reaper.fm/files/6.x/reaper623_linux_x86_64.tar.xz"
-URL_SWEETHOME3d="https://ufpr.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.4.2/SweetHome3D-6.4.2-linux-x64.tgz"
+URL_REAPER="https://dlcf.reaper.fm/6.x/reaper625_linux_x86_64.tar.xz"
+URL_SWEETHOME3d="https://netactuate.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.5/SweetHome3D-6.5-linux-x64.tgz"
 URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_11.5_Linux.tar.gz"
 URL_GUISCRCPY="https://github.com/srevinsaju/guiscrcpy/releases/download/v4.9.0/guiscrcpy-4.9.0.dev.r.glibc2.27-x86_64.AppImage"
 URL_ASF="https://github.com/JustArchiNET/ArchiSteamFarm/releases/download/5.0.3.2/ASF-linux-x64.zip"
+URL_POWERISO="https://www.poweriso.com/poweriso-x64-1.1.tar.gz"
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
 
@@ -152,10 +154,9 @@ mkdir "$DEB"
 
 wget -c "$URL_CHROME"     -P "$DEB"
 wget -c "$URL_OPERA"      -P "$DEB"
-#wget -c "$URL_TEAMVIEWER" -P "$DEB"
-#wget -c "$URL_ANYDESK"    -P "$DEB"
+wget -c "$URL_VIVALDI"    -P "$DEB"
+wget -c "$URL_TEAMVIEWER" -P "$DEB"
 wget -c "$URL_DISCORD"    -P "$DEB"
-wget -c "$URL_4K"         -P "$DEB"
 wget -c "$URL_ANGRYIP"    -P "$DEB"
 wget -c "$URL_SKYPE"      -P "$DEB"
 wget -c "$URL_PEAZIP"     -P "$DEB"
@@ -192,6 +193,7 @@ wget -c "$URL_SWEETHOME3d" -P "$APPIMAGE"
 wget -c "$URL_FILESYNC"    -P "$APPIMAGE"
 wget -c "$URL_GUISCRCPY"   -P "$APPIMAGE"
 wget -c "$URL_ASF"         -P "$APPIMAGE"
+wget -c "$URL_POWERISO"    -P "$APPIMAGE"
 
 echo -e
 
@@ -210,6 +212,7 @@ sudo apt install obs-studio -y
 
 #PPA
 
+sudo apt install filezilla -y
 sudo apt install SimpleScreenRecorder -y
 sudo apt install flameshot -y
 sudo apt install darktable -y
