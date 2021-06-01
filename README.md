@@ -14,10 +14,11 @@ postinstall_ | sobre
 :------ | :------ 
 postintall_template.sh | Template base para você criar seu próprio shellscript automatizado.
 postintall_template_simplificado.sh | Template simplificado para você criar seu próprio shellscript automatizado.
+postinstall_desktop_popOS_20.04.sh | Shellscript criado para usso pessoal Pop!_OS 20.04 LTS
 postintall_notebook_mint20.sh | Shellscript criado para usso pessoal Mint 20 LTS
 postintall_desktop_mint20.sh | Shellscript criado para usso pessoal Mint 20 LTS
 postinstall_lutris+wine.sh | Shellscript instala o Lutris + Wine + Libs Vulkan
-postinstall_network_tools.sh | Shellscript Instala ferramentas de rede
+
 
 <br> <br>
 
@@ -128,6 +129,5 @@ mkdir "$DEB"
 - [Ubuntu Beginners/BashScripting](https://help.ubuntu.com/community/Beginners/BashScripting)
 - [Introdução à programação Shell](http://www.faqs.org/docs/air/tsshell.html)
 - [Programando em shell script](http://www.devin.com.br/shell_script/)
-
 
 <br><br>

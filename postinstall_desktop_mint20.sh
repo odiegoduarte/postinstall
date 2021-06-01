@@ -97,6 +97,8 @@ ICONS="$HOME/.icons"
 ICONSEX="$HOME/.icons/Extras"
 THEMES="$HOME/.themes"
 
+#Adicionando PPA ao Sistema --------------------------------------------------------------------------------#
+
 echo -e
 
 print_centered "-"  "-" 
@@ -120,6 +122,8 @@ sudo apt-add-repository "$PPA_NVIDIA" -y
 
 sudo apt update -y
 
+#Baixando temas e icone -----------------------------------------------------------------------------------#
+
 echo -e
 
 print_centered "-"  "-" 
@@ -141,6 +145,8 @@ tar -xvf *.tar.xz
 cd "$ICONS"
 unzip *.zip
 #sudo rm "$THEMES" *.zip
+
+#Baixando e instalando programas .DEB ----------------------------------------------------------------------#
 
 echo -e
 
@@ -173,8 +179,12 @@ wget -c "$URL_BUTTERCUP"  -P "$DEB"
 wget -c "$URL_QLIGHT"     -P "$DEB"
 wget -c "$URL_DRAWIO"     -P "$DEB"
 
+#Instalando DEB ---------------------------------------------------------------------------------------------#
+
 sudo dpkg -i $DEB/*.deb
 sudo apt-get install -f -y
+
+#Baixando e instalando programas AppImage ------------------------------------------------------------------#
 
 echo -e
 
@@ -198,6 +208,9 @@ wget -c "$URL_GUISCRCPY"   -P "$APPIMAGE"
 wget -c "$URL_ASF"         -P "$APPIMAGE"
 wget -c "$URL_POWERISO"    -P "$APPIMAGE"
 wget -c "$URL_ZEROTIER"    -P "$APPIMAGE"
+
+
+#Instalando programas dos PPA's --------------------------------------------------------------------------#
 
 echo -e
 
@@ -235,10 +248,13 @@ sudo apt install git -y
 sudo apt install pavucontrol -y
 sudo apt install virt-viewer -y
 
+
+#Instalando programas em Flatpak ----------------------------------------------------------------------------#
+
 echo -e
 
 print_centered "-"  "-" 
-print_centered "Iinstalando programas em Flatpak"
+print_centered "Instalando programas em Flatpak"
 print_centered "-"  "-" 
 
 echo -e
@@ -271,6 +287,8 @@ flatpak uninstall --unused -y
 sudo apt update -y
 sudo apt autoremove -y
 sudo apt autoclean -y
+
+#Instalação finalizada ------------------------------------------------------------------------------------#
 
 echo -e
 
