@@ -52,34 +52,34 @@ PPA_NVIDIA="ppa:graphics-drivers/ppa"
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/74.0.3911.218/linux/opera-stable_74.0.3911.218_amd64.deb"
-URL_VIVALDI="https://downloads.vivaldi.com/stable/vivaldi-stable_3.8.2259.40-1_amd64.deb"
+URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/76.0.4017.175/linux/opera-stable_76.0.4017.175_amd64.deb"
+URL_VIVALDI="https://downloads.vivaldi.com/stable/vivaldi-stable_3.8.2259.42-1_amd64.deb"
 URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
 URL_ANYDESK="https://download.anydesk.com/linux/anydesk_6.1.1-1_amd64.deb"
-URL_NOMACHINE="https://download.nomachine.com/download/7.4/Linux/nomachine_7.4.1_1_amd64.deb"
-URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.14/discord-0.0.14.deb"
+URL_NOMACHINE="https://download.nomachine.com/download/7.6/Linux/nomachine_7.6.2_4_amd64.deb"
+URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.15/discord-0.0.15.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.6/ipscan_3.7.6_amd64.deb"
 URL_SKYPE="https://repo.skype.com/latest/skypeforlinux-64.deb"
 URL_PEAZIP="https://github.com/peazip/PeaZip/releases/download/7.9.0/peazip_7.9.0.LINUX.x86_64.GTK2.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
-URL_VSCODE="https://az764295.vo.msecnd.net/stable/cfa2e218100323074ac1948c885448fdf4de2a7f/code_1.56.0-1620166262_amd64.deb"
+URL_VSCODE="https://az764295.vo.msecnd.net/stable/054a9295330880ed74ceaedda236253b4f39a335/code_1.56.2-1620838498_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
 URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v1.20.5/buttercup-desktop_1.20.5_amd64.deb"
 #URL_WEBSOCKET"https://github.com/Palakis/obs-websocket/releases/download/4.8.0/obs-websocket-4.8.0-1_amd64.deb"
-#URL_DECKBOARD"https://github.com/rivafarabi/deckboard/releases/download/v1.9.85/deckboard_1.9.85_amd64.deb"
+#URL_DECKBOARD"https://github.com/rivafarabi/deckboard/releases/download/v1.9.94/deckboard_1.9.94_amd64.deb"
 URL_QLIGHT"https://www.qlcplus.org/downloads/4.12.3/qlcplus_4.12.3_amd64.deb"
-URL_DRAWIO"https://github.com/jgraph/drawio-desktop/releases/download/v14.5.1/drawio-amd64-14.5.1.deb"
+URL_DRAWIO"https://github.com/jgraph/drawio-desktop/releases/download/v14.6.13/drawio-amd64-14.6.13.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
-URL_SCREENCLOUD="https://github.com/olav-st/screencloud/releases/download/v1.5.3/ScreenCloud-v1.5.3-x86_64.AppImage"
-URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.15.3.AppImage"
+#URL_SCREENCLOUD="https://github.com/olav-st/screencloud/releases/download/v1.5.3/ScreenCloud-v1.5.3-x86_64.AppImage"
+URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.15.6.AppImage"
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
-URL_REAPER="https://dlcf.reaper.fm/6.x/reaper628_linux_x86_64.tar.xz"
+URL_REAPER="https://dlcf.reaper.fm/6.x/reaper629_linux_x86_64.tar.xz"
 URL_SWEETHOME3d="https://netactuate.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.5.2/SweetHome3D-6.5.2-linux-x64.tgz"
-URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_11.9_Linux.tar.gz"
+URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_11.10_Linux.tar.gz"
 URL_GUISCRCPY="https://github.com/srevinsaju/guiscrcpy/releases/download/v4.10.0/guiscrcpy-.dev.r.glibc2.27-x86_64.AppImage"
-URL_ASF="https://github.com/JustArchiNET/ArchiSteamFarm/releases/download/5.0.6.6/ASF-linux-x64.zip"
+URL_ASF="https://github.com/JustArchiNET/ArchiSteamFarm/releases/download/5.1.0.8/ASF-linux-x64.zip"
 URL_POWERISO="https://www.poweriso.com/poweriso-x64-1.1.tar.gz"
 URL_ZEROTIER="https://github.com/tralph3/ZeroTier-GUI/releases/download/v1.2.1/ZeroTier-GUI.zip"
 
@@ -168,8 +168,8 @@ wget -c "$URL_STACER"     -P "$DEB"
 wget -c "$URL_VSCODE"     -P "$DEB"
 wget -c "$URL_EMAGE"      -P "$DEB"
 wget -c "$URL_BUTTERCUP"  -P "$DEB"
-wget -c "$URL_WEBSOCKET"  -P "$DEB"
-wget -c "$URL_DECKBOARD"  -P "$DEB"
+#wget -c "$URL_WEBSOCKET"  -P "$DEB"
+#wget -c "$URL_DECKBOARD"  -P "$DEB"
 wget -c "$URL_QLIGHT"     -P "$DEB"
 wget -c "$URL_DRAWIO"     -P "$DEB"
 
@@ -188,7 +188,7 @@ echo -e
 
 mkdir "$APPIMAGE"
 
-wget -c "$URL_SCREENCLOUD" -P "$APPIMAGE"
+#wget -c "$URL_SCREENCLOUD" -P "$APPIMAGE"
 wget -c "$URL_FONTBASE"    -P "$APPIMAGE"
 wget -c "$URL_SHOWPLAYER"  -P "$APPIMAGE"
 wget -c "$URL_REAPER"      -P "$APPIMAGE"
@@ -198,8 +198,6 @@ wget -c "$URL_GUISCRCPY"   -P "$APPIMAGE"
 wget -c "$URL_ASF"         -P "$APPIMAGE"
 wget -c "$URL_POWERISO"    -P "$APPIMAGE"
 wget -c "$URL_ZEROTIER"    -P "$APPIMAGE"
-
-
 
 echo -e
 
@@ -253,8 +251,9 @@ flatpak install flathub org.inkscape.Inkscape -y
 flatpak install flathub org.kde.krita -y
 flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub org.qbittorrent.qBittorrent -y
-flatpak install flathub org.ardour.Ardour -y
-flatpak install flathub io.github.Soundux
+flatpak install flathub io.github.Soundux -y
+#flatpak install flathub org.ardour.Ardour -y
+
 
 #Removendo programas --------------------------------------------------------------------------------------#
 

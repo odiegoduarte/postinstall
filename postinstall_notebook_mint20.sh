@@ -51,22 +51,22 @@ PPA_BT="ppa:blaze/rtbth-dkms"
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_VIVALDI="https://downloads.vivaldi.com/stable/vivaldi-stable_3.8.2259.40-1_amd64.deb"
+URL_VIVALDI="https://downloads.vivaldi.com/stable/vivaldi-stable_3.8.2259.42-1_amd64.deb"
 URL_ANYDESK="https://download.anydesk.com/linux/anydesk_6.1.1-1_amd64.deb"
-URL_NOMACHINE="https://download.nomachine.com/download/7.4/Linux/nomachine_7.4.1_1_amd64.deb"
+URL_NOMACHINE="https://download.nomachine.com/download/7.6/Linux/nomachine_7.6.2_4_amd64.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.6/ipscan_3.7.6_amd64.deb"
 URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
-URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.14/discord-0.0.14.deb"
+URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.15/discord-0.0.15.deb"
 URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v1.20.5/buttercup-desktop_1.20.5_amd64.deb"
 URL_QLIGHT"https://www.qlcplus.org/downloads/4.12.3/qlcplus_4.12.3_amd64.deb"
-URL_DRAWIO"https://github.com/jgraph/drawio-desktop/releases/download/v14.5.1/drawio-amd64-14.5.1.deb"
+URL_DRAWIO"https://github.com/jgraph/drawio-desktop/releases/download/v14.6.13/drawio-amd64-14.6.13.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
-URL_REAPER="https://dlcf.reaper.fm/6.x/reaper628_linux_x86_64.tar.xz"
-URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.15.3.AppImage"
+URL_REAPER="https://dlcf.reaper.fm/6.x/reaper629_linux_x86_64.tar.xz"
+URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.15.6.AppImage"
 URL_ZEROTIER="https://github.com/tralph3/ZeroTier-GUI/releases/download/v1.2.1/ZeroTier-GUI.zip"
 
 #Variáveis Personalização ---------------------------------------------------------------------------------#
@@ -139,6 +139,7 @@ mkdir "$DEB"
 wget -c "$URL_CHROME"     -P "$DEB"
 wget -c "$URL_VIVALDI"    -P "$DEB"
 wget -c "$URL_ANYDESK"    -P "$DEB"
+wget -c "$URL_NOMACHINE"  -P "$DEB"
 wget -c "$URL_ANGRYIP"    -P "$DEB"
 wget -c "$URL_STACER"     -P "$DEB"
 wget -c "$URL_EMAGE"      -P "$DEB"
@@ -185,7 +186,6 @@ sudo apt install rtbth-dkms -y
 
 sudo apt install filezilla -y
 sudo apt install linssid -y
-#sudo apt install wireshark -y
 sudo apt install SimpleScreenRecorder -y
 sudo apt install audacity -y
 sudo apt install spotify-client -y
@@ -197,7 +197,6 @@ sudo apt install adb -y
 sudo apt install scrcpy -y
 sudo apt install git -y
 sudo apt install virt-viewer -y
-#sudo apt install pavucontrol -y
 
 echo -e
 
