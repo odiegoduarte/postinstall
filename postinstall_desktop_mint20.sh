@@ -240,6 +240,7 @@ sudo apt install virtualbox -y
 sudo apt install mint-meta-codecs -y
 sudo apt install gparted -y
 sudo apt install p7zip-full -y
+sudo apt install p7zip-rar -y
 sudo apt install psensor -y
 sudo apt install hplip-gui -y
 sudo apt install adb -y
@@ -268,6 +269,7 @@ flatpak install flathub org.kde.krita -y
 flatpak install flathub org.kde.kdenlive -y
 flatpak install flathub org.qbittorrent.qBittorrent -y
 flatpak install flathub io.github.Soundux -y
+flatpak install flathub org.shotcut.Shotcut
 #flatpak install flathub org.ardour.Ardour -y
 
 
