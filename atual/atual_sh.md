@@ -6,21 +6,11 @@
 
 <br>
 
-Esse repositório foi criado para armazenar meus shellscripts de pôs instalação para automatizar a instalação de programas, você ira encontrar 3 pastas nesse repositório <img width="14" height="" src="assets/icons/folder.png">**templates** <img width="14" height="" src="assets/icons/folder.png">**olds** e <img width="14" height="" src="assets/icons/folder.png">**atual** abaixo tem uma tabela com a descrição de cada pasta. 
-
-
-<br>
-
 postinstall_ | sobre
 :------ | :------ 
- <img width="14" height="" src="assets/icons/folder.png"> templates | Template base para você criar seu próprio shellscript automatizado.
-<img width="14" height="" src="assets/icons/folder.png"> olds | Shellscripts antigos.
- <img width="14" height="" src="assets/icons/folder.png"> atual |Shellscripts criado para meu usso pessoal.
+postinstall_desktop_popOS_20.04.sh | Shellscripts criado para meu usso pessoal Pop!_OS 20.04 LTS
+postinstall_lutris+wine.sh | Shellscript instala o Lutris + Wine + Libs Vulkan
 
-
-<br> <br>
-
-## [Criando seu shellscript através do template.]()
 
 <br> <br>
 
