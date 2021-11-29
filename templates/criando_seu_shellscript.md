@@ -1,13 +1,14 @@
 <br>
 
 <p align="center">
-  <img width="922" height="257" src="assets/postinstall.png">
+  <img width="922" height="257" src="/assets/postinstall.png">
 </p>
 
 <br>
 
+## <img width="25" height="" src="/assets/icons/linux.png"> Criando seu shellscript através do template.
 
-## Criando seu shellscript através do template.
+<br>
 
 ~~~javascript
 
@@ -21,7 +22,9 @@
     |------ Nome da váriavel que você vai usar no passo "#Adicionando PPA"
 
 ~~~
----
+
+<br>
+
 ~~~javascript
 #Variáveis.deb
 
@@ -32,7 +35,9 @@ URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd6
     | 
     |------ Nome da váriavel que você vai usar no passo "#Download DEB"
 ~~~
----
+
+<br>
+
 ~~~javascript
 #Variáveis AppImage
 
@@ -43,7 +48,9 @@ URL_EMAGE"https://github.com/douglasjunior/emage/releases/download/1.1.0/emage-1
     | 
     |------ Nome da váriavel que você vai usar no passo "#Download AppImage"
 ~~~
----
+
+<br>
+
 ~~~javascript
 #Variáveis de pasta
 
@@ -57,7 +64,9 @@ THEMES="$HOME/.themes"
    |
    |---Nomes das variáveis
 ~~~
----
+
+<br>
+
 ~~~javascript
 #Adicionando PPA
 
@@ -68,7 +77,9 @@ sudo apt-add-repository "$PPA_OBS" -y
              |              
              |-- Comando para adicionar
 ~~~
----
+
+<br>
+
 ~~~javascript
 #Download DEB
 
@@ -90,7 +101,9 @@ mkdir "$DEB"
                |
                |--- Comando que vai vai instalar todos os programas .deb baixados.
 ~~~
----
+
+<br>
+
 ~~~javascript
 #Instala os apps via repositório
 
@@ -114,5 +127,7 @@ mkdir "$DEB"
 - [Ubuntu Beginners/BashScripting](https://help.ubuntu.com/community/Beginners/BashScripting)
 - [Introdução à programação Shell](http://www.faqs.org/docs/air/tsshell.html)
 - [Programando em shell script](http://www.devin.com.br/shell_script/)
+- [Shell Scripting Tutorial](https://www.shellscript.sh/)
+- [Bash Reference Manual](https://devdocs.io/bash/)
 
 <br><br>

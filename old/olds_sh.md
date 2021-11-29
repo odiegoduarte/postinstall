@@ -1,7 +1,7 @@
 <br>
 
 <p align="center">
-  <img width="922" height="257" src="https://raw.githubusercontent.com/odiegoduarte/postinstall/master/images/postinstall.png">
+  <img width="922" height="257" src="/assets/postinstall.png">
 </p>
 
 <br>
@@ -13,7 +13,11 @@ postintall_notebook_mint20.sh | Shellscript criado para usso pessoal Mint 20 LTS
 postintall_desktop_mint20.sh | Shellscript criado para usso pessoal Mint 20 LTS
 
 
-<br> <br> <br>
+<br> <br>
+
+##<img width="25" height="" src="/assets/icons/linux.png"> [Criando seu shellscript através do template.](https://github.com/odiegoduarte/postinstall/blob/master/templates/criando_seu_shellscript.md)
+
+<br> <br>
 
 ### Referências
 
@@ -24,5 +28,7 @@ postintall_desktop_mint20.sh | Shellscript criado para usso pessoal Mint 20 LTS
 - [Ubuntu Beginners/BashScripting](https://help.ubuntu.com/community/Beginners/BashScripting)
 - [Introdução à programação Shell](http://www.faqs.org/docs/air/tsshell.html)
 - [Programando em shell script](http://www.devin.com.br/shell_script/)
+- [Shell Scripting Tutorial](https://www.shellscript.sh/)
+- [Bash Reference Manual](https://devdocs.io/bash/)
 
 <br><br>

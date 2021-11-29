@@ -13,14 +13,14 @@ Esse repositório foi criado para armazenar meus shellscripts de pôs instalaç�
 
 postinstall_ | sobre
 :------ | :------ 
- <img width="14" height="" src="assets/icons/folder.png"> templates | Template base para você criar seu próprio shellscript automatizado.
-<img width="14" height="" src="assets/icons/folder.png"> olds | Shellscripts antigos.
- <img width="14" height="" src="assets/icons/folder.png"> atual |Shellscripts criado para meu usso pessoal.
+ <img width="14" height="" src="assets/icons/folder.png">templates | [Template base para você criar seu próprio shellscript automatizado.](https://github.com/odiegoduarte/postinstall/tree/master/templates)
+<img width="14" height="" src="assets/icons/folder.png"> olds | [Shellscripts antigos.](https://github.com/odiegoduarte/postinstall/tree/master/old)
+ <img width="14" height="" src="assets/icons/folder.png"> atual |[Shellscripts criado para meu usso pessoal.](https://github.com/odiegoduarte/postinstall/tree/master/atual)
 
 
 <br> <br>
 
-## [Criando seu shellscript através do template.]()
+##<img width="25" height="" src="/assets/icons/linux.png"> [Criando seu shellscript através do template.](https://github.com/odiegoduarte/postinstall/blob/master/templates/criando_seu_shellscript.md)
 
 <br> <br>
 
@@ -33,5 +33,7 @@ postinstall_ | sobre
 - [Ubuntu Beginners/BashScripting](https://help.ubuntu.com/community/Beginners/BashScripting)
 - [Introdução à programação Shell](http://www.faqs.org/docs/air/tsshell.html)
 - [Programando em shell script](http://www.devin.com.br/shell_script/)
+- [Shell Scripting Tutorial](https://www.shellscript.sh/)
+- [Bash Reference Manual](https://devdocs.io/bash/)
 
 <br><br>
