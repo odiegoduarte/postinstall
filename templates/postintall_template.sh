@@ -88,7 +88,7 @@ apt-get install SimpleScreenRecorder -y
 
 #Flatpak --------------------------------------------------------------------------------------------------#
 
-flatpak install flathub org.gimp.GIMP -y
+flatpak install -y --noninteractive flathub org.inkscape.Inkscape
 
 #Atualização e limpeza do sistema -------------------------------------------------------------------------#
 
