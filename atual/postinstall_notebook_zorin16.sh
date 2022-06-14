@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Criado por Diego Duarte 2020 - 2021
+#Criado por Diego Duarte 2020 - 2022
 #Esse Shell Script criado para instalação automatizada dos programas que utilizo no meu dia a dia.
 #Link do projeto no Github https://github.com/odiegoduarte/postinstall
 
@@ -51,7 +51,7 @@ MENU="Escolha uma das seguintes opções:"
 
 OPTIONS=(
          1 "Instalar todos os programas"
-         2 "Instalar apenas programas do Flathub"
+         2 "Instalar apenas programas flatpak"
          3 "Instalar driver NVIDIA 390"
          4 "Instalar driver Bluetooth RT3290"
          5 "Sair"
@@ -82,19 +82,19 @@ PPA_BT="ppa:blaze/rtbth-dkms"
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 URL_ANYDESK="https://download.anydesk.com/linux/anydesk_6.1.1-1_amd64.deb"
-URL_NOMACHINE="https://download.nomachine.com/download/7.7/Linux/nomachine_7.7.4_1_amd64.deb"
-URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.6/ipscan_3.7.6_amd64.deb"
+URL_NOMACHINE="https://download.nomachine.com/download/7.9/Linux/nomachine_7.9.2_1_amd64.deb"
+URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.8.2/ipscan_3.8.2_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
-URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.16/discord-0.0.16.deb"
+URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.18/discord-0.0.18.deb"
 URL_QLIGHT="https://www.qlcplus.org/downloads/4.12.4/qlcplus_4.12.4_amd64.deb"
-URL_DRAWIO="https://github.com/jgraph/drawio-desktop/releases/download/v16.0.0/drawio-amd64-16.0.0.deb"
+URL_DRAWIO="https://github.com/jgraph/drawio-desktop/releases/download/v19.0.3/drawio-amd64-19.0.3.deb"
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
-URL_REAPER="https://dlcf.reaper.fm/6.x/reaper642_linux_x86_64.tar.xz"
-URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.16.9.AppImage"
-URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v2.13.0/Buttercup-linux-x86_64.AppImage"
+URL_REAPER="https://www.reaper.fm/files/6.x/reaper660_linux_x86_64.tar.xz"
+URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.17.5.AppImage"
+URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v2.14.2/Buttercup-linux-x86_64.AppImage"
 
 #Variáveis de pasta ---------------------------------------------------------------------------------------#
 
@@ -210,9 +210,10 @@ flatpak install -y --noninteractive flathub org.kde.kdenlive
 flatpak install -y --noninteractive flathub org.mixxx.Mixxx
 flatpak install -y --noninteractive flathub org.gnome.glabels-3
 flatpak install -y --noninteractive flathub net.sourceforge.projectM
-flatpak install -y --noninteractive flathub org.x.Warpinator
 flatpak install -y --noninteractive flathub org.telegram.desktop
 flatpak install -y --noninteractive flathub org.qbittorrent.qBittorrent
+flatpak install -y --noninteractive flatpak install flathub in.srev.guiscrcpy
+flatpak install -y --noninteractive flatpak install flathub com.github.tchx84.Flatseal
 
 #Atualização e limpeza do sistema -----------------------------------------------#
 
@@ -252,9 +253,10 @@ flatpak install -y --noninteractive flathub org.kde.kdenlive
 flatpak install -y --noninteractive flathub org.mixxx.Mixxx
 flatpak install -y --noninteractive flathub org.gnome.glabels-3
 flatpak install -y --noninteractive flathub net.sourceforge.projectM
-flatpak install -y --noninteractive flathub org.x.Warpinator
 flatpak install -y --noninteractive flathub org.telegram.desktop
 flatpak install -y --noninteractive flathub org.qbittorrent.qBittorrent
+flatpak install -y --noninteractive flatpak install flathub in.srev.guiscrcpy
+flatpak install -y --noninteractive flatpak install flathub com.github.tchx84.Flatseal
 
             ;;
 
