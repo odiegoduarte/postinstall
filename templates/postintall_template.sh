@@ -1,96 +1,193 @@
 #!/bin/bash
 
-# Criado por Diego Duarte 2020 - 2021
-# Template de instalação automatica em Shell Script.
-# Link do projeto no Github https://github.com/odiegoduarte/postinstall
+#Criado por Diego Duarte 2020 - 2022
+#Shell Script base
+#Link do projeto no Github https://github.com/odiegoduarte/postinstall
+
+#Print do texto centralizado
+
+function print_centered {
+     [[ $# == 0 ]] && return 1
+
+     declare -i TERM_COLS="$(tput cols)"
+     declare -i str_len="${#1}"
+     [[ $str_len -ge $TERM_COLS ]] && {
+          echo "$1";
+          return 0;
+     }
+
+     declare -i filler_len="$(( (TERM_COLS - str_len) / 2 ))"
+     [[ $# -ge 2 ]] && ch="${2:0:1}" || ch=" "
+     filler=""
+     for (( i = 0; i < filler_len; i++ )); do
+          filler="${filler}${ch}"
+     done
+
+     printf "%s%s%s" "$filler" "$1" "$filler"
+     [[ $(( (TERM_COLS - str_len) % 2 )) -ne 0 ]] && printf "%s" "${ch}"
+     printf "\n"
+
+     return 0
+}
+
+#Tela carregamento opcional
+
+export NEWT_COLORS='
+window=,black
+border=white,black
+textbox=white,black
+button=black,white
+'
+whiptail ...
+ {
+    for ((i = 0 ; i <= 100 ; i+=7)); do
+        sleep 0.1
+        echo $i
+    done
+} | whiptail --gauge " Mensagem de Carregamento" 7 60 0
+
+#MENU
+
+HEIGHT=17
+WIDTH=50
+CHOICE_HEIGHT=6
+BACKTITLE="Texto superior esquerdo"
+TITLE="Titulo Centro"
+MENU="Escolha uma das seguintes opções:"
+
+OPTIONS=(
+         1 "Menu 01"
+         2 "Menu 02"
+         3 "Menu 03"
+         4 "Menu 04"
+         5 "Sair"
+         )
+
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+case $CHOICE in
+
+        1)
+
+echo -e        
+print_centered "Menu 01"
+echo -e
 
 #Variáveis PPA --------------------------------------------------------------------------------------------#
 
- PPA_OBS="ppa:obsproject/obs-studio"
-#
-#
-#
+PPA_NOME="ppa:nome/repo"
 
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
-URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-# 
-# 
-#
+URL_NOME="URL .deb"
+
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
-URL_EMAGE"https://github.com/douglasjunior/emage/releases/download/1.1.0/emage-1.1.0-x86_64.AppImage"
-
-
-#Variáveis Personalização ---------------------------------------------------------------------------------#
-
-URL_QOGIR="https://raw.githubusercontent.com/vinceliuice/Qogir-theme/releases/Qogir-dark.tar.xz"
-URL_PAPIRUS="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/master.zip"
-
+URL_NOME="URL .AppImage"
 
 #Variáveis de pasta ---------------------------------------------------------------------------------------#
 
 DEB="$HOME/Downloads/DEB"
 APPIMAGE="$HOME/Apps"
-ICONS="$HOME/.icons"
-THEMES="$HOME/.themes"
+# ICONS="$HOME/.icons"
+# THEMES="$HOME/.themes"
 
-#Removendo travas do APT -----------------------------------------------------------------------------------#
+echo -e
+
+print_centered "-"  "-" 
+print_centered "Adicionando PPA ao Sistema"
+print_centered "-"  "-" 
+
+echo -e
+
+#Removendo travas do APT -------------------------------------------------#
 
 sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/cache/apt/archives/lock
 
-#Adicionando PPA ------------------------------------------------------------------------------------------#
+#Adicionando PPA ---------------------------------------------------------#
 
-sudo apt-add-repository "$PPA_OBS" -y
+sudo apt-add-repository "$PPA_NOME" -y
 
-#Atualizando o repositório --------------------------------------------------------------------------------#
+#Atualizando o repositório -----------------------------------------------#
 
 sudo apt update -y
 
-#Personalização -------------------------------------------------------------------------------------------#
+#Download DEB ------------------------------------------------------------#
 
-wget -c "$URL_QOGIR"     -P "$THEMES"
-wget -c "$URL_PAPIRUS"   -P "$ICONS"
+echo -e
 
-cd "$THEMES"
-tar -xvf *.tar.xz
+print_centered "-"  "-" 
+print_centered "Baixando e instalando programas .DEB"
+print_centered "-"  "-" 
 
-cd "$ICONS"
-unzip *.zip
-
-#O comando cd é para acessar a pasta e os comandos "tar" e "unzip" são para extrair os arquivos compactados.
-
-
-#Download DEB ---------------------------------------------------------------------------------------------#
+echo -e
 
 mkdir "$DEB"
-wget -c "$URL_CHROME"     -P "$DEB"
+
+wget -c "$URL_NOME"     -P "$DEB"
+
 
 sudo dpkg -i $DEB/*.deb
 sudo apt-get install -f -y
 
-#Download AppImage ----------------------------------------------------------------------------------------#
+echo -e
+
+print_centered "-"  "-" 
+print_centered "Baixando e instalando programas AppImage"
+print_centered "-"  "-" 
+
+echo -e
+
+#Download App Image ----------------------------------------------------------#
 
 mkdir "$APPIMAGE"
 
-wget -c "$URL_EMAGE"       -P "$APPIMAGE"
+wget -c "$URL_NOME"  -P "$APPIMAGE"
 
-#Instala os apps via repositório --------------------------------------------------------------------------#
+echo -e
+
+print_centered "-"  "-" 
+print_centered "Instalando programas via PPA's"
+print_centered "-"  "-" 
+
+echo -e
+
+#Instala os apps via repositório -----------------------------------------------#
 
 #PPA de terceiros
-sudo apt install obs-studio -y
+
+sudo apt install nome_pacote -y
 
 #PPA
-apt-get install SimpleScreenRecorder -y
+
+#Apps do repositório oficial da distro
+sudo apt install git -y
+
+echo -e
+
+print_centered "-"  "-" 
+print_centered "Iinstalando programas em Flatpak"
+print_centered "-"  "-" 
+
+echo -e
+
+#Flatpak -------------------------------------------------------------------------#
+
+flatpak install -y --noninteractive flathub org.nome.GIMP
 
 
-#Flatpak --------------------------------------------------------------------------------------------------#
+#Atualização e limpeza do sistema -----------------------------------------------#
 
-flatpak install -y --noninteractive flathub org.inkscape.Inkscape
-
-#Atualização e limpeza do sistema -------------------------------------------------------------------------#
+#sudo apt remove nome-app -y
 
 flatpak update
 
@@ -98,4 +195,60 @@ sudo apt update -y
 sudo apt autoclean -y
 sudo apt autoremove -y
 
-echo "Instalação finalizada !"
+echo -e
+
+print_centered "-"  "-" 
+print_centered "Instalação finalizada !"
+print_centered "-"  "-" 
+
+echo -e
+
+read
+
+           ;;
+             
+#-------------------------------------------------------------------------------#
+        
+        2)
+
+print_centered "Menu 02"
+echo -e
+
+#
+#Funcçoes para o Menu 02 AQUI
+#
+
+
+            ;;
+
+#-------------------------------------------------------------------------------#
+        
+        3)
+
+print_centered "Menu 03"
+echo -e
+
+#
+#Funcçoes para o Menu 02 AQUI
+#
+
+             ;;
+                     
+#-------------------------------------------------------------------------------#
+        
+        4)
+
+print_centered "Menu 04"
+echo -e
+
+#
+#Funcçoes para o Menu 04 AQUI
+#
+             ;; 
+
+#-------------------------------------------------------------------------------#
+
+        5)
+exit
+            ;;                      
+esac

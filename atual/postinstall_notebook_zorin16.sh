@@ -81,11 +81,9 @@ PPA_BT="ppa:blaze/rtbth-dkms"
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_ANYDESK="https://download.anydesk.com/linux/anydesk_6.1.1-1_amd64.deb"
 URL_NOMACHINE="https://download.nomachine.com/download/7.9/Linux/nomachine_7.9.2_1_amd64.deb"
 URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.8.2/ipscan_3.8.2_amd64.deb"
 URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
-URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.18/discord-0.0.18.deb"
 URL_QLIGHT="https://www.qlcplus.org/downloads/4.12.4/qlcplus_4.12.4_amd64.deb"
 URL_DRAWIO="https://github.com/jgraph/drawio-desktop/releases/download/v19.0.3/drawio-amd64-19.0.3.deb"
 
@@ -137,11 +135,9 @@ echo -e
 mkdir "$DEB"
 
 wget -c "$URL_CHROME"     -P "$DEB"
-wget -c "$URL_ANYDESK"    -P "$DEB"
 wget -c "$URL_NOMACHINE"  -P "$DEB"
 wget -c "$URL_ANGRYIP"    -P "$DEB"
 wget -c "$URL_EMAGE"      -P "$DEB"
-wget -c "$URL_DISCORD"    -P "$DEB"
 wget -c "$URL_QLIGHT"     -P "$DEB"
 wget -c "$URL_DRAWIO"     -P "$DEB"
 
@@ -214,6 +210,9 @@ flatpak install -y --noninteractive flathub org.telegram.desktop
 flatpak install -y --noninteractive flathub org.qbittorrent.qBittorrent
 flatpak install -y --noninteractive flatpak install flathub in.srev.guiscrcpy
 flatpak install -y --noninteractive flatpak install flathub com.github.tchx84.Flatseal
+flatpak install -y --noninteractive flatpak install flathub com.anydesk.Anydesk
+flatpak install -y --noninteractive flatpak install flathub com.discordapp.Discord
+flatpak install -y --noninteractive flatpak install flathub com.virustotal.VirusTotalUploader
 
 #Atualização e limpeza do sistema -----------------------------------------------#
 

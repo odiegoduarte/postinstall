@@ -10,8 +10,7 @@
 
 <br>
 
-~~~javascript
-
+~~~shell
 #Variáveis PPA
 
  PPA_OBS="ppa:obsproject/obs-studio"
@@ -25,7 +24,7 @@
 
 <br>
 
-~~~javascript
+~~~shell
 #Variáveis.deb
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
@@ -38,7 +37,7 @@ URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd6
 
 <br>
 
-~~~javascript
+~~~shell
 #Variáveis AppImage
 
 URL_EMAGE"https://github.com/douglasjunior/emage/releases/download/1.1.0/emage-1.1.0-x86_64.AppImage"
@@ -104,7 +103,7 @@ mkdir "$DEB"
 
 <br>
 
-~~~javascript
+~~~shell
 #Instala os apps via repositório
 
 #PPA de terceiros             
@@ -115,6 +114,9 @@ mkdir "$DEB"
           |
           |-- Comando de instalação
 ~~~
+
+<br>
+
 
 <br> <br> <br>
 
