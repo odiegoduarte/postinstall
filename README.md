@@ -16,7 +16,17 @@ postinstall_ | sobre
  <img width="14" height="" src="assets/icons/folder.png"> atual |<img width="14" height="" src="/assets/icons/linux.png"> [Meus shellscripts pós intalação.](https://github.com/odiegoduarte/postinstall/blob/master/atual/)
  <img width="14" height="" src="assets/icons/folder.png"> olds | <img width="14" height="" src="/assets/icons/linux.png"> [Shellscripts antigos.](https://github.com/odiegoduarte/postinstall/blob/master/old/)
 
-<br> <br>
+<br> 
+
+~~~sh
+
+# Pacote necessário
+
+apt install dialog
+
+~~~
+
+<br>
 
 ### Referências
 
