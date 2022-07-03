@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Criado por Diego Duarte 2020 - 2022
-#Instala ultima versão wine e lutris POP OS 22.04
+#Instala ultima versão wine e lutris POP OS 20.04
 #Link do projeto no Github https://github.com/odiegoduarte/postinstall
 
 function print_centered {
@@ -91,9 +91,9 @@ sudo dpkg --add-architecture i386 -y
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo mv winehq.key /usr/share/keyrings/winehq-archive.key
 
-# Wine Adicionando repositorio Ubuntu, PopOS! e etc 22.04
-wget -nc https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
-sudo mv winehq-jammy.sources /etc/apt/sources.list.d/
+# Wine Adicionando repositorio Ubuntu, PopOS! e etc 20.04
+wget -nc https://dl.winehq.org/wine-builds/ubuntu/dists/focal/winehq-focal.sources
+sudo mv winehq-focal.sources /etc/apt/sources.list.d/
 
 sudo apt update -y
 
@@ -130,9 +130,9 @@ sudo dpkg --add-architecture i386 -y
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo mv winehq.key /usr/share/keyrings/winehq-archive.key
 
-# Wine Adicionando repositorio Ubuntu, PopOS! e etc 22.04
-wget -nc https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
-sudo mv winehq-jammy.sources /etc/apt/sources.list.d/
+# Wine Adicionando repositorio Ubuntu, PopOS! e etc 20.04
+wget -nc https://dl.winehq.org/wine-builds/ubuntu/dists/focal/winehq-focal.sources
+sudo mv winehq-focal.sources /etc/apt/sources.list.d/
 
 sudo apt update -y
 

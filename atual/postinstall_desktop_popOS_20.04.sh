@@ -1,23 +1,8 @@
 #!/bin/bash
 
-#Criado por Diego Duarte 2020 - 2021
+#Criado por Diego Duarte 2020 - 2022
 #Esse Shell Script criado com base no POP! OS 20.04 LTS.
 #Link do projeto no Github https://github.com/odiegoduarte/postinstall
-
-{
-    for ((i = 0 ; i <= 100 ; i+=7)); do
-        sleep 0.1
-        echo $i
-    done
-} | whiptail --gauge "Iniciando o postinstall.sh" 6 50 0
-
-if (whiptail --title " Seja bem-vindo(a)$(whoami) " --yesno "PostInstall é um simples shell script que foi criado para fazer instalação automatizada de programas no POP! OS 20.04 LTS.
-No próximo passo irá te pedir a senha de usuário.
-Deseja continuar ?" 10 60) then
-    echo "Iniciando postinstall . . . "
-else
-    echo "Postinstall cancelado.$6 "
-fi
 
 function print_centered {
      [[ $# == 0 ]] && return 1
@@ -43,35 +28,68 @@ function print_centered {
      return 0
 }
 
-#Variáveis PPA --------------------------------------------------------------------------------------------#
+export NEWT_COLORS='
+window=,black
+border=white,black
+textbox=white,black
+button=black,white
+'
+whiptail ...
+ {
+    for ((i = 0 ; i <= 100 ; i+=7)); do
+        sleep 0.1
+        echo $i
+    done
+} | whiptail --gauge " Iniciando postinstall Pop!_OS 20.04" 7 60 0
 
-PPA_OBS="ppa:obsproject/obs-studio"
+HEIGHT=17
+WIDTH=50
+CHOICE_HEIGHT=6
+BACKTITLE="postinstall Pop!_OS 20.04"
+TITLE="postinstall Pop!_OS 20.04"
+MENU="Escolha uma das seguintes opções:"
+
+OPTIONS=(
+         1 "Instalar todos os programas"
+         2 "Instalar apenas programas flatpak"
+         3 "Sair"
+         )
+
+CHOICE=$(dialog --clear \
+                --backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+
+clear
+case $CHOICE in
+
+        1)
+
+#Variáveis PPA --------------------------------------------------------------------------------------------#
 
 #Variáveis.deb --------------------------------------------------------------------------------------------#
 
 URL_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-URL_OPERA="https://download3.operacdn.com/pub/opera/desktop/76.0.4017.175/linux/opera-stable_76.0.4017.175_amd64.deb"
-URL_VIVALDI="https://downloads.vivaldi.com/stable/vivaldi-stable_3.8.2259.42-1_amd64.deb"
-URL_TEAMVIEWER="https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
-URL_ANYDESK="https://download.anydesk.com/linux/anydesk_6.1.1-1_amd64.deb"
 URL_NOMACHINE="https://download.nomachine.com/download/7.6/Linux/nomachine_7.6.2_4_amd64.deb"
-URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.15/discord-0.0.15.deb"
-URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.7.6/ipscan_3.7.6_amd64.deb"
-URL_PEAZIP="https://github.com/peazip/PeaZip/releases/download/7.9.0/peazip_7.9.0.LINUX.x86_64.GTK2.deb"
-URL_STACER="https://sourceforge.net/projects/stacer/files/v1.1.0/stacer_1.1.0_amd64.deb"
-URL_VSCODE="https://az764295.vo.msecnd.net/stable/054a9295330880ed74ceaedda236253b4f39a335/code_1.56.2-1620838498_amd64.deb"
-URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage_1.1.0_amd64.deb"
-URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v1.20.5/buttercup-desktop_1.20.5_amd64.deb"
-URL_DRAWIO"https://github.com/jgraph/drawio-desktop/releases/download/v14.6.13/drawio-amd64-14.6.13.deb"
+URL_ANGRYIP="https://github.com/angryip/ipscan/releases/download/3.8.2/ipscan_3.8.2_amd64.deb"
+URL_DISCORD="https://dl.discordapp.net/apps/linux/0.0.18/discord-0.0.18.deb"
+URL_GUILDED="https://www.guilded.gg/downloads/Guilded-Linux.deb"
+URL_BINANCE="https://download.binance.com/electron-desktop/linux/production/binance-amd64-linux.deb"
+URL_MC="https://launcher.mojang.com/download/Minecraft.deb"
+URL_PARSEC"https://builds.parsecgaming.com/package/parsec-linux.deb"
+
 
 #Variáveis AppImage ---------------------------------------------------------------------------------------#
 
-URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.15.6.AppImage"
 URL_SHOWPLAYER="https://github.com/FrancescoCeruti/linux-show-player/releases/download/v0.5.2/LinuxShowPlayer-v0.5.2-x86_64.AppImage"
-URL_REAPER="https://dlcf.reaper.fm/6.x/reaper629_linux_x86_64.tar.xz"
-URL_SWEETHOME3d="https://netactuate.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.5.2/SweetHome3D-6.5.2-linux-x64.tgz"
-URL_FILESYNC="https://freefilesync.org/download/FreeFileSync_11.10_Linux.tar.gz"
-URL_GUISCRCPY="https://github.com/srevinsaju/guiscrcpy/releases/download/v4.10.0/guiscrcpy-.dev.r.glibc2.27-x86_64.AppImage"
+URL_REAPER="https://www.reaper.fm/files/6.x/reaper662_linux_x86_64.tar.xz"
+URL_FONTBASE="https://releases.fontba.se/linux/FontBase-2.17.5.AppImage"
+URL_BUTTERCUP="https://github.com/buttercup/buttercup-desktop/releases/download/v2.14.2/Buttercup-linux-x86_64.AppImage"
+URL_EMAGE="https://github.com/douglasjunior/emage/releases/download/1.1.0/emage-1.1.0-x86_64.AppImage"
+URL_MANAGER="https://github.com/Manager-io/Manager/releases/latest/download/Manager-linux-x64.AppImage"
 URL_ASF="https://github.com/JustArchiNET/ArchiSteamFarm/releases/download/5.1.0.8/ASF-linux-x64.zip"
 URL_ZEROTIER="https://github.com/tralph3/ZeroTier-GUI/releases/download/v1.2.1/ZeroTier-GUI.zip"
 URL_ITCHIO="https://itch.io/app/download?platform=linux"
@@ -104,8 +122,6 @@ sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/cache/apt/archives/lock
 
 #Adicionando PPA ------------------------------------------------------------------------------------------#
-
-sudo apt-add-repository "$PPA_OBS" -y
 
 #Atualizando o repositório --------------------------------------------------------------------------------#
 
@@ -146,19 +162,13 @@ echo -e
 mkdir "$DEB"
 
 wget -c "$URL_CHROME"     -P "$DEB"
-wget -c "$URL_OPERA"      -P "$DEB"
-wget -c "$URL_VIVALDI"    -P "$DEB"
-wget -c "$URL_TEAMVIEWER" -P "$DEB"
-wget -c "$URL_ANYDESK"    -P "$DEB"
 wget -c "$URL_NOMACHINE"  -P "$DEB"
-wget -c "$URL_DISCORD"    -P "$DEB"
 wget -c "$URL_ANGRYIP"    -P "$DEB"
-wget -c "$URL_PEAZIP"     -P "$DEB"
-wget -c "$URL_STACER"     -P "$DEB"
-wget -c "$URL_VSCODE"     -P "$DEB"
-wget -c "$URL_EMAGE"      -P "$DEB"
-wget -c "$URL_BUTTERCUP"  -P "$DEB"
-wget -c "$URL_DRAWIO"     -P "$DEB"
+wget -c "$URL_DISCORD"    -P "$DEB"
+wget -c "$URL_GUILDED"    -P "$DEB"
+wget -c "$URL_BINANCE"    -P "$DEB"
+wget -c "$MC"             -P "$DEB"
+wget -c "$PARSEC"         -P "$DEB"
 
 #Instalando DEB ---------------------------------------------------------------------------------------------#
 
@@ -179,16 +189,15 @@ echo -e
 
 mkdir "$APPIMAGE"
 
-wget -c "$URL_FONTBASE"    -P "$APPIMAGE"
 wget -c "$URL_SHOWPLAYER"  -P "$APPIMAGE"
 wget -c "$URL_REAPER"      -P "$APPIMAGE"
-wget -c "$URL_SWEETHOME3d" -P "$APPIMAGE"
-wget -c "$URL_FILESYNC"    -P "$APPIMAGE"
-wget -c "$URL_GUISCRCPY"   -P "$APPIMAGE"
-wget -c "$URL_ASF"         -P "$APPIMAGE"
+wget -c "$URL_FONTBASE"    -P "$APPIMAGE"
+wget -c "$URL_BUTTERCUP"   -P "$APPIMAGE"
+wget -c "$URL_EMAGE"       -P "$APPIMAGE"
+wget -c "$URL_MANAGER"     -P "$APPIMAGE"
+wget -c "$ASF"             -P "$APPIMAGE"
 wget -c "$URL_ZEROTIER"    -P "$APPIMAGE"
 wget -c "$URL_ITCHIO"      -P "$APPIMAGE"
-
 
 #Instalando programas dos PPA's --------------------------------------------------------------------------#
 
@@ -202,29 +211,19 @@ echo -e
 
 #Instala os apps via repositório ---------------------------------------------------------------------------#
 
-#PPA de terceiros
-
-sudo apt install obs-studio -y
-
 #PPA do sistema
 
-sudo apt install gnome-tweaks -y
-sudo apt install spotify-client -y
-sudo apt install filezilla -y
 sudo apt install SimpleScreenRecorder -y
 sudo apt install virtualbox -y
-sudo apt install gparted -y
 sudo apt install p7zip-full -y
 sudo apt install p7zip-rar -y
 sudo apt install adb -y
-sudo apt install scrcpy -y
 sudo apt install git -y
-sudo apt install virt-viewer -y
 
 #Games
+
 sudo apt install steam -y
 sudo apt install lutris -y
-
 
 #Instalando programas em Flatpak ---------------------------------------------------------------------------#
 
@@ -238,22 +237,45 @@ echo -e
 
 #Flatpak --------------------------------------------------------------------------------------------------#
 
-flatpak install flathub org.gimp.GIMP -y
-flatpak install flathub org.gimp.GIMP.Plugin.GMic -y
-flatpak install flathub org.inkscape.Inkscape -y
-flatpak install flathub org.kde.krita -y
-flatpak install flathub org.kde.kdenlive -y
-flatpak install flathub org.audacityteam.Audacity
-flatpak install flathub io.github.Soundux -y
-flatpak install flathub com.skype.Client
-flatpak install flathub org.qbittorrent.qBittorrent -y
-flatpak install flathub com.poweriso.PowerISO
-flatpak install flathub org.shotcut.Shotcut
-flatpak install flathub org.ardour.Ardour -y
+#LCS
+flatpak install -y --noninteractive flatpak install flathub org.gimp.GIMP
+flatpak install -y --noninteractive flatpak install flathub org.gimp.GIMP.Plugin.GMic
+flatpak install -y --noninteractive flatpak install flathub org.kde.krita
+flatpak install -y --noninteractive flatpak install flathub org.inkscape.Inkscape
+flatpak install -y --noninteractive flatpak install flathub org.audacityteam.Audacity
+flatpak install -y --noninteractive flatpak install flathub org.kde.kdenlive
+flatpak install -y --noninteractive flatpak install flathub com.sweethome3d.Sweethome3d
+flatpak install -y --noninteractive flatpak install flathub fr.handbrake.ghb
+flatpak install -y --noninteractive flatpak install flathub com.github.Bleuzen.FFaudioConverter
+#flatpak install -y --noninteractive flatpak install flathub org.ardour.Ardour
 
-#Removendo programas --------------------------------------------------------------------------------------#
+#Web
+flatpak install -y --noninteractive flatpak install flathub com.brave.Browser
+flatpak install -y --noninteractive flathub org.qbittorrent.qBittorrent
+flatpak install -y --noninteractive flatpak install flathub com.anydesk.Anydesk
+flatpak install -y --noninteractive flathub org.telegram.desktop
+flatpak install -y --noninteractive flatpak install flathub com.teamspeak.TeamSpeak
 
-sudo apt remove thunderbird -y
+#Tolls
+flatpak install -y --noninteractive flatpak install flathub com.poweriso.PowerISO
+flatpak install -y --noninteractive flatpak install flathub io.github.peazip.PeaZip
+flatpak install -y --noninteractive flatpak install flathub org.freefilesync.FreeFileSync
+
+#Live
+flatpak install -y --noninteractive flatpak install flathub com.obsproject.Studio
+flatpak install -y --noninteractive flatpak install flathub com.github.wwmm.pulseeffects
+flatpak install -y --noninteractive flatpak install flathub io.github.Soundux
+flatpak install -y --noninteractive flatpak install flathub in.srev.guiscrcpy
+
+#Multimidia
+flatpak install -y --noninteractive flathub com.spotify.Client
+flatpak install -y --noninteractive flathub org.videolan.VLC
+
+#Tools
+flatpak install -y --noninteractive flatpak install flathub io.github.prateekmedia.appimagepool
+flatpak install -y --noninteractive flatpak install flathub com.ultimaker.cura
+flatpak install -y --noninteractive flatpak install flathub cc.arduino.IDE2
+flatpak install -y --noninteractive flathub com.virustotal.VirusTotalUploader
 
 #Atualização e limpeza do sistema -------------------------------------------------------------------------#
 
@@ -275,4 +297,63 @@ print_centered "-"  "-"
 
 echo -e
 
-#read
+read
+
+           ;;
+             
+#-------------------------------------------------------------------------------#
+        
+        2)
+
+print_centered "Instalando programas do flathub"
+echo -e
+
+#LCS
+flatpak install -y --noninteractive flatpak install flathub org.gimp.GIMP
+flatpak install -y --noninteractive flatpak install flathub org.gimp.GIMP.Plugin.GMic
+flatpak install -y --noninteractive flatpak install flathub org.kde.krita
+flatpak install -y --noninteractive flatpak install flathub org.inkscape.Inkscape
+flatpak install -y --noninteractive flatpak install flathub org.audacityteam.Audacity
+flatpak install -y --noninteractive flatpak install flathub org.kde.kdenlive
+flatpak install -y --noninteractive flatpak install flathub com.sweethome3d.Sweethome3d
+flatpak install -y --noninteractive flatpak install flathub fr.handbrake.ghb
+flatpak install -y --noninteractive flatpak install flathub com.github.Bleuzen.FFaudioConverter
+#flatpak install -y --noninteractive flatpak install flathub org.ardour.Ardour
+
+#Web
+flatpak install -y --noninteractive flatpak install flathub com.brave.Browser
+flatpak install -y --noninteractive flathub org.qbittorrent.qBittorrent
+flatpak install -y --noninteractive flatpak install flathub com.anydesk.Anydesk
+flatpak install -y --noninteractive flathub org.telegram.desktop
+flatpak install -y --noninteractive flatpak install flathub com.teamspeak.TeamSpeak
+
+#Tolls
+flatpak install -y --noninteractive flatpak install flathub com.poweriso.PowerISO
+flatpak install -y --noninteractive flatpak install flathub io.github.peazip.PeaZip
+flatpak install -y --noninteractive flatpak install flathub org.freefilesync.FreeFileSync
+
+#Live
+flatpak install -y --noninteractive flatpak install flathub com.obsproject.Studio
+flatpak install -y --noninteractive flatpak install flathub com.github.wwmm.pulseeffects
+flatpak install -y --noninteractive flatpak install flathub io.github.Soundux
+flatpak install -y --noninteractive flatpak install flathub in.srev.guiscrcpy
+
+#Multimidia
+flatpak install -y --noninteractive flathub com.spotify.Client
+flatpak install -y --noninteractive flathub org.videolan.VLC
+
+#Tools
+flatpak install -y --noninteractive flatpak install flathub io.github.prateekmedia.appimagepool
+flatpak install -y --noninteractive flatpak install flathub com.ultimaker.cura
+flatpak install -y --noninteractive flatpak install flathub cc.arduino.IDE2
+flatpak install -y --noninteractive flathub com.virustotal.VirusTotalUploader
+            ;;
+
+                     
+
+#-------------------------------------------------------------------------------#
+
+        3)
+exit
+            ;;                      
+esac
