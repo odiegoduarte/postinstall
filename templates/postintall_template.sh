@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Criado por Diego Duarte 2020 - 2022
+#Criado por Diego Duarte 2020 - 2023
 #Shell Script base
 #Link do projeto no Github https://github.com/odiegoduarte/postinstall
 
@@ -8,25 +8,21 @@
 
 function print_centered {
      [[ $# == 0 ]] && return 1
-
-     declare -i TERM_COLS="$(tput cols)"
+     declare -i TERM_COLS="$(($(tput cols)))"
      declare -i str_len="${#1}"
      [[ $str_len -ge $TERM_COLS ]] && {
           echo "$1";
           return 0;
      }
-
      declare -i filler_len="$(( (TERM_COLS - str_len) / 2 ))"
      [[ $# -ge 2 ]] && ch="${2:0:1}" || ch=" "
      filler=""
      for (( i = 0; i < filler_len; i++ )); do
           filler="${filler}${ch}"
      done
-
      printf "%s%s%s" "$filler" "$1" "$filler"
      [[ $(( (TERM_COLS - str_len) % 2 )) -ne 0 ]] && printf "%s" "${ch}"
      printf "\n"
-
      return 0
 }
 
@@ -136,7 +132,7 @@ mkdir "$DEB"
 wget -c "$URL_NOME"     -P "$DEB"
 
 
-sudo dpkg -i $DEB/*.deb
+sudo dpkg -i "$DEB"/*.deb
 sudo apt-get install -f -y
 
 echo -e
@@ -203,7 +199,7 @@ print_centered "-"  "-"
 
 echo -e
 
-read
+read -r
 
            ;;
              
@@ -215,7 +211,7 @@ print_centered "Menu 02"
 echo -e
 
 #
-#Funcçoes para o Menu 02 AQUI
+#Funções para o Menu 02 AQUI
 #
 
 
@@ -229,7 +225,7 @@ print_centered "Menu 03"
 echo -e
 
 #
-#Funcçoes para o Menu 02 AQUI
+#Funções para o Menu 02 AQUI
 #
 
              ;;
@@ -242,7 +238,7 @@ print_centered "Menu 04"
 echo -e
 
 #
-#Funcçoes para o Menu 04 AQUI
+#Funções para o Menu 04 AQUI
 #
              ;; 
 
